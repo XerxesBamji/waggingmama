@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Contact Wagging Mama – get in touch to book a free meet and greet, ask a question, or enquire about dog walking and boarding." />
+  <meta name="description"
+    content="Contact Wagging Mama – get in touch to book a free meet and greet, ask a question, or enquire about dog walking and boarding." />
   <title>Contact Us | Wagging Mama</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -11,14 +13,14 @@
       theme: {
         extend: {
           colors: {
-            sage:  { DEFAULT:'#7A9E7E', dark:'#5c8060', light:'#A8C5AB', pale:'#E8F0E9' },
-            pink:  { DEFAULT:'#E8889A', dark:'#c96a7d', light:'#F2AABA', pale:'#FDEEF1' },
-            cream: { DEFAULT:'#FAF7F4', dark:'#F0EBE5' },
+            sage: { DEFAULT: '#7A9E7E', dark: '#5c8060', light: '#A8C5AB', pale: '#E8F0E9' },
+            pink: { DEFAULT: '#E8889A', dark: '#c96a7d', light: '#F2AABA', pale: '#FDEEF1' },
+            cream: { DEFAULT: '#FAF7F4', dark: '#F0EBE5' },
           },
           fontFamily: {
-            playfair: ['"Playfair Display"','serif'],
-            dancing:  ['"Dancing Script"','cursive'],
-            inter:    ['Inter','sans-serif'],
+            playfair: ['"Playfair Display"', 'serif'],
+            dancing: ['"Dancing Script"', 'cursive'],
+            inter: ['Inter', 'sans-serif'],
           },
         }
       }
@@ -26,52 +28,59 @@
   </script>
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body class="bg-cream">
 
   <!-- ===== NAVBAR ===== -->
   <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-cream/90 backdrop-blur-sm py-3 px-6">
     <div class="max-w-6xl mx-auto flex items-center justify-between">
       <a href="index.html" class="flex items-center gap-3">
-        <img src="img/logo.png" alt="Wagging Mama" class="h-14 w-auto" onerror="this.style.display='none'"/>
+        <img src="img/logo.png" alt="Wagging Mama" class="h-14 w-auto" onerror="this.style.display='none'" />
         <div class="leading-tight">
           <span class="font-playfair font-bold text-xl text-[#2D2D2D]">Wagging</span>
           <span class="font-dancing text-xl text-pink ml-1">Mama</span>
         </div>
       </a>
       <div class="hidden md:flex items-center gap-8">
-        <a href="index.html"       class="nav-link">Home</a>
-        <a href="about.html"       class="nav-link">About</a>
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
         <a href="dog-walking.html" class="nav-link">Dog Walking</a>
-        <a href="dog-boarding.html"class="nav-link">Dog Boarding</a>
-        <a href="gallery.html"     class="nav-link">Gallery</a>
-        <a href="prices.html"      class="nav-link">Prices</a>
-        <a href="contact.html"     class="btn-primary text-sm active">Contact Us</a>
+        <a href="dog-boarding.html" class="nav-link">Dog Boarding</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="prices.html" class="nav-link">Prices</a>
+        <a href="contact.html" class="btn-primary text-sm active">Contact Us</a>
       </div>
       <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg" aria-label="Toggle menu">
-        <svg id="menu-icon"  class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-        <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
       </button>
     </div>
     <div id="mobile-menu" class="md:hidden bg-white/95 backdrop-blur rounded-2xl mt-2 mx-2 shadow-lg">
       <div class="flex flex-col p-4 gap-1">
-        <a href="index.html"       class="nav-link py-3 px-4 rounded-xl hover:bg-cream block">Home</a>
-        <a href="about.html"       class="nav-link py-3 px-4 rounded-xl hover:bg-cream block">About Us</a>
+        <a href="index.html" class="nav-link py-3 px-4 rounded-xl hover:bg-cream block">Home</a>
+        <a href="about.html" class="nav-link py-3 px-4 rounded-xl hover:bg-cream block">About Us</a>
         <a href="dog-walking.html" class="nav-link py-3 px-4 rounded-xl hover:bg-cream block">Dog Walking</a>
-        <a href="dog-boarding.html"class="nav-link py-3 px-4 rounded-xl hover:bg-cream block">Dog Boarding</a>
-        <a href="gallery.html"     class="nav-link py-3 px-4 rounded-xl hover:bg-cream block">Gallery</a>
-        <a href="prices.html"      class="nav-link py-3 px-4 rounded-xl hover:bg-cream block">Prices</a>
-        <a href="contact.html"     class="btn-primary mt-2 justify-center">Contact Us</a>
+        <a href="dog-boarding.html" class="nav-link py-3 px-4 rounded-xl hover:bg-cream block">Dog Boarding</a>
+        <a href="gallery.html" class="nav-link py-3 px-4 rounded-xl hover:bg-cream block">Gallery</a>
+        <a href="prices.html" class="nav-link py-3 px-4 rounded-xl hover:bg-cream block">Prices</a>
+        <a href="contact.html" class="btn-primary mt-2 justify-center">Contact Us</a>
       </div>
     </div>
   </nav>
 
   <!-- ===== PAGE HEADER ===== -->
-  <div class="pt-28 pb-12 px-6 text-center" style="background:linear-gradient(160deg,#E8F0E9 0%,#FAF7F4 60%,#FDEEF1 100%)">
+  <div class="pt-28 pb-12 px-6 text-center"
+    style="background:linear-gradient(160deg,#E8F0E9 0%,#FAF7F4 60%,#FDEEF1 100%)">
     <div class="max-w-2xl mx-auto">
       <span class="section-label">Say Hello!</span>
       <h1 class="section-title">Contact Us</h1>
       <div class="section-divider centered"></div>
-      <p class="text-gray-500 leading-relaxed">We'd love to hear from you! Fill in the form below and we'll get back to you within 24 hours.</p>
+      <p class="text-gray-500 leading-relaxed">We'd love to hear from you! Fill in the form below and we'll get back to
+        you within 24 hours.</p>
     </div>
   </div>
 
@@ -86,7 +95,8 @@
         <div class="rounded-2xl p-6 text-white" style="background:linear-gradient(135deg,#7A9E7E,#5c8060)">
           <div class="text-3xl mb-3">🤝</div>
           <h3 class="font-playfair text-xl font-bold mb-2">Free Meet & Greet</h3>
-          <p class="text-white/85 text-sm leading-relaxed">All new clients receive a free, no-obligation meet & greet so we can get to know you and your dog before anything is booked.</p>
+          <p class="text-white/85 text-sm leading-relaxed">All new clients receive a free, no-obligation meet & greet so
+            we can get to know you and your dog before anything is booked.</p>
         </div>
 
         <!-- Contact details -->
@@ -94,7 +104,8 @@
           <h3 class="font-playfair font-bold text-lg">Get in Touch</h3>
 
           <div class="flex items-start gap-4">
-            <div class="w-11 h-11 bg-sage-pale rounded-xl flex items-center justify-center text-xl flex-shrink-0">📞</div>
+            <div class="w-11 h-11 bg-sage-pale rounded-xl flex items-center justify-center text-xl flex-shrink-0">📞
+            </div>
             <div>
               <div class="font-semibold text-sm">Phone</div>
               <a href="tel:07XXXXXXXXX" class="text-sage-dark text-sm hover:underline">07XXX XXXXXX</a>
@@ -102,15 +113,18 @@
           </div>
 
           <div class="flex items-start gap-4">
-            <div class="w-11 h-11 bg-pink-pale rounded-xl flex items-center justify-center text-xl flex-shrink-0">📧</div>
+            <div class="w-11 h-11 bg-pink-pale rounded-xl flex items-center justify-center text-xl flex-shrink-0">📧
+            </div>
             <div>
               <div class="font-semibold text-sm">Email</div>
-              <a href="mailto:hello@waggingmama.co.uk" class="text-sage-dark text-sm hover:underline break-all">hello@waggingmama.co.uk</a>
+              <a href="mailto:hello@waggingmama.co.uk"
+                class="text-sage-dark text-sm hover:underline break-all">hello@waggingmama.co.uk</a>
             </div>
           </div>
 
           <div class="flex items-start gap-4">
-            <div class="w-11 h-11 bg-sage-pale rounded-xl flex items-center justify-center text-xl flex-shrink-0">📍</div>
+            <div class="w-11 h-11 bg-sage-pale rounded-xl flex items-center justify-center text-xl flex-shrink-0">📍
+            </div>
             <div>
               <div class="font-semibold text-sm">Location</div>
               <p class="text-gray-500 text-sm">Your Local Area, UK</p>
@@ -118,7 +132,8 @@
           </div>
 
           <div class="flex items-start gap-4">
-            <div class="w-11 h-11 bg-pink-pale rounded-xl flex items-center justify-center text-xl flex-shrink-0">🕐</div>
+            <div class="w-11 h-11 bg-pink-pale rounded-xl flex items-center justify-center text-xl flex-shrink-0">🕐
+            </div>
             <div>
               <div class="font-semibold text-sm">Response Time</div>
               <p class="text-gray-500 text-sm">Within 24 hours</p>
@@ -130,10 +145,12 @@
         <div class="bg-white rounded-2xl p-6 shadow-sm">
           <h3 class="font-playfair font-bold text-lg mb-4">Follow Us</h3>
           <div class="flex gap-3">
-            <a href="#" class="flex items-center gap-2 bg-sage-pale text-sage-dark px-4 py-2 rounded-xl text-sm font-semibold hover:bg-sage hover:text-white transition-all">
+            <a href="#"
+              class="flex items-center gap-2 bg-sage-pale text-sage-dark px-4 py-2 rounded-xl text-sm font-semibold hover:bg-sage hover:text-white transition-all">
               <span>f</span> Facebook
             </a>
-            <a href="#" class="flex items-center gap-2 bg-pink-pale text-pink-dark px-4 py-2 rounded-xl text-sm font-semibold hover:bg-pink hover:text-white transition-all">
+            <a href="#"
+              class="flex items-center gap-2 bg-pink-pale text-pink-dark px-4 py-2 rounded-xl text-sm font-semibold hover:bg-pink hover:text-white transition-all">
               <span>ig</span> Instagram
             </a>
           </div>
@@ -163,7 +180,8 @@
           <div id="form-success" class="hidden text-center py-10">
             <div class="text-6xl mb-4">🐾</div>
             <h3 class="font-playfair text-2xl font-bold text-sage-dark mb-3">Message Received!</h3>
-            <p class="text-gray-500 leading-relaxed mb-6">Thank you for getting in touch. We'll get back to you within 24 hours to arrange your free meet & greet!</p>
+            <p class="text-gray-500 leading-relaxed mb-6">Thank you for getting in touch. We'll get back to you within
+              24 hours to arrange your free meet & greet!</p>
             <a href="index.html" class="btn-primary">Back to Home</a>
           </div>
 
@@ -172,15 +190,8 @@
             Netlify automatically detects the netlify attribute on the form tag.
             After submission, Netlify redirects to ?success=true which we handle in JS.
           -->
-          <form
-            id="contact-form"
-            name="wagging-mama-contact"
-            method="POST"
-            action="/contact.html?success=true"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
-            netlify
-          >
+          <form id="contact-form" name="wagging-mama-contact" method="POST" action="/contact.html?success=true"
+            data-netlify="true" data-netlify-honeypot="bot-field" netlify>
             <!-- Netlify hidden fields -->
             <input type="hidden" name="form-name" value="wagging-mama-contact" />
             <div class="hidden">
@@ -191,11 +202,13 @@
             <div class="grid sm:grid-cols-2 gap-5 mb-5">
               <div>
                 <label for="first-name" class="form-label">First Name <span class="text-pink">*</span></label>
-                <input type="text" id="first-name" name="first-name" class="form-input" placeholder="e.g. Sarah" required />
+                <input type="text" id="first-name" name="first-name" class="form-input" placeholder="e.g. Sarah"
+                  required />
               </div>
               <div>
                 <label for="last-name" class="form-label">Last Name <span class="text-pink">*</span></label>
-                <input type="text" id="last-name" name="last-name" class="form-input" placeholder="e.g. Johnson" required />
+                <input type="text" id="last-name" name="last-name" class="form-input" placeholder="e.g. Johnson"
+                  required />
               </div>
             </div>
 
@@ -234,7 +247,8 @@
               </div>
               <div>
                 <label for="dog-breed" class="form-label">Breed & Age</label>
-                <input type="text" id="dog-breed" name="dog-breed" class="form-input" placeholder="e.g. Cocker Spaniel, 3yrs" />
+                <input type="text" id="dog-breed" name="dog-breed" class="form-input"
+                  placeholder="e.g. Cocker Spaniel, 3yrs" />
               </div>
             </div>
 
@@ -260,7 +274,8 @@
             <!-- Row 6: Message -->
             <div class="mb-6">
               <label for="message" class="form-label">Anything Else We Should Know?</label>
-              <textarea id="message" name="message" class="form-textarea" placeholder="Tell us about your dog – their personality, any special requirements, medical needs, or questions you have..."></textarea>
+              <textarea id="message" name="message" class="form-textarea"
+                placeholder="Tell us about your dog – their personality, any special requirements, medical needs, or questions you have..."></textarea>
             </div>
 
             <!-- How did you hear -->
@@ -282,7 +297,8 @@
               <span>🐾</span> Send Message
             </button>
 
-            <p class="text-center text-xs text-gray-400 mt-4">By submitting this form, you agree to us contacting you about your enquiry. We'll never share your data with third parties.</p>
+            <p class="text-center text-xs text-gray-400 mt-4">By submitting this form, you agree to us contacting you
+              about your enquiry. We'll never share your data with third parties.</p>
           </form>
         </div>
       </div>
@@ -300,19 +316,23 @@
       <div class="grid md:grid-cols-2 gap-4">
         <div class="bg-cream rounded-2xl p-6 reveal delay-100">
           <h3 class="font-semibold mb-2 text-sm">How quickly will you reply?</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">We aim to respond to all enquiries within 24 hours, usually much sooner. For urgent enquiries please call us directly.</p>
+          <p class="text-gray-500 text-sm leading-relaxed">We aim to respond to all enquiries within 24 hours, usually
+            much sooner. For urgent enquiries please call us directly.</p>
         </div>
         <div class="bg-cream rounded-2xl p-6 reveal delay-200">
           <h3 class="font-semibold mb-2 text-sm">Is the meet & greet really free?</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">Absolutely! We never charge for the initial meet & greet. It's important we all feel happy and comfortable before starting.</p>
+          <p class="text-gray-500 text-sm leading-relaxed">Absolutely! We never charge for the initial meet & greet.
+            It's important we all feel happy and comfortable before starting.</p>
         </div>
         <div class="bg-cream rounded-2xl p-6 reveal delay-300">
           <h3 class="font-semibold mb-2 text-sm">What areas do you cover?</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">We cover your local area and surrounding villages. Drop us a message with your postcode and we'll confirm if we can help.</p>
+          <p class="text-gray-500 text-sm leading-relaxed">We cover your local area and surrounding villages. Drop us a
+            message with your postcode and we'll confirm if we can help.</p>
         </div>
         <div class="bg-cream rounded-2xl p-6 reveal delay-400">
           <h3 class="font-semibold mb-2 text-sm">How do I pay?</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">We accept bank transfer or cash. Payment is typically due at the end of each week for regular clients, or in advance for boarding stays.</p>
+          <p class="text-gray-500 text-sm leading-relaxed">We accept bank transfer or cash. Payment is typically due at
+            the end of each week for regular clients, or in advance for boarding stays.</p>
         </div>
       </div>
     </div>
@@ -327,19 +347,27 @@
             <span class="font-playfair font-bold text-xl">Wagging</span>
             <span class="font-dancing text-xl text-pink">Mama</span>
           </div>
-          <p class="text-white/60 text-sm leading-relaxed mb-5 max-w-xs">Professional dog walking & home boarding, delivered with love. Trusted by families across the area.</p>
+          <p class="text-white/60 text-sm leading-relaxed mb-5 max-w-xs">Professional dog walking & home boarding,
+            delivered with love. Trusted by families across the area.</p>
           <div class="flex gap-4">
-            <a href="#" class="w-9 h-9 bg-white/10 rounded-full flex items-center justify-center hover:bg-pink transition-colors text-sm" aria-label="Facebook">f</a>
-            <a href="#" class="w-9 h-9 bg-white/10 rounded-full flex items-center justify-center hover:bg-pink transition-colors text-sm" aria-label="Instagram">ig</a>
+            <a href="#"
+              class="w-9 h-9 bg-white/10 rounded-full flex items-center justify-center hover:bg-pink transition-colors text-sm"
+              aria-label="Facebook">f</a>
+            <a href="#"
+              class="w-9 h-9 bg-white/10 rounded-full flex items-center justify-center hover:bg-pink transition-colors text-sm"
+              aria-label="Instagram">ig</a>
+            <a href="https://wa.me/07803326822"
+              class="w-9 h-9 bg-white/10 rounded-full flex items-center justify-center hover:bg-pink transition-colors text-sm"
+              aria-label="Instagram">wh</a>
           </div>
         </div>
         <div>
           <h4 class="font-semibold mb-4 text-sm tracking-wider uppercase text-white/80">Services</h4>
           <ul class="space-y-2">
-            <li><a href="dog-walking.html"  class="footer-link">Dog Walking</a></li>
+            <li><a href="dog-walking.html" class="footer-link">Dog Walking</a></li>
             <li><a href="dog-boarding.html" class="footer-link">Dog Boarding</a></li>
-            <li><a href="prices.html"       class="footer-link">Prices</a></li>
-            <li><a href="gallery.html"      class="footer-link">Gallery</a></li>
+            <li><a href="prices.html" class="footer-link">Prices</a></li>
+            <li><a href="gallery.html" class="footer-link">Gallery</a></li>
           </ul>
         </div>
         <div>
@@ -359,4 +387,5 @@
 
   <script src="js/main.js"></script>
 </body>
+
 </html>

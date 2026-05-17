@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Dog walking services from Wagging Mama – solo walks, group walks, and flexible scheduling for your furry friend." />
+  <meta name="description"
+    content="Dog walking services from Wagging Mama – solo walks, group walks, and flexible scheduling for your furry friend." />
   <title>Dog Walking | Wagging Mama</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -11,14 +13,14 @@
       theme: {
         extend: {
           colors: {
-            sage:  { DEFAULT:'#7A9E7E', dark:'#5c8060', light:'#A8C5AB', pale:'#E8F0E9' },
-            pink:  { DEFAULT:'#E8889A', dark:'#c96a7d', light:'#F2AABA', pale:'#FDEEF1' },
-            cream: { DEFAULT:'#FAF7F4', dark:'#F0EBE5' },
+            sage: { DEFAULT: '#7A9E7E', dark: '#5c8060', light: '#A8C5AB', pale: '#E8F0E9' },
+            pink: { DEFAULT: '#E8889A', dark: '#c96a7d', light: '#F2AABA', pale: '#FDEEF1' },
+            cream: { DEFAULT: '#FAF7F4', dark: '#F0EBE5' },
           },
           fontFamily: {
-            playfair: ['"Playfair Display"','serif'],
-            dancing:  ['"Dancing Script"','cursive'],
-            inter:    ['Inter','sans-serif'],
+            playfair: ['"Playfair Display"', 'serif'],
+            dancing: ['"Dancing Script"', 'cursive'],
+            inter: ['Inter', 'sans-serif'],
           },
         }
       }
@@ -26,41 +28,46 @@
   </script>
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body class="bg-cream">
 
   <!-- ===== NAVBAR ===== -->
   <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-cream/90 backdrop-blur-sm py-3 px-6">
     <div class="max-w-6xl mx-auto flex items-center justify-between">
       <a href="index.html" class="flex items-center gap-3">
-        <img src="img/logo.png" alt="Wagging Mama" class="h-14 w-auto" onerror="this.style.display='none'"/>
+        <img src="img/logo.png" alt="Wagging Mama" class="h-14 w-auto" onerror="this.style.display='none'" />
         <div class="leading-tight">
           <span class="font-playfair font-bold text-xl text-[#2D2D2D]">Wagging</span>
           <span class="font-dancing text-xl text-pink ml-1">Mama</span>
         </div>
       </a>
       <div class="hidden md:flex items-center gap-8">
-        <a href="index.html"       class="nav-link">Home</a>
-        <a href="about.html"       class="nav-link">About</a>
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
         <a href="dog-walking.html" class="nav-link active">Dog Walking</a>
-        <a href="dog-boarding.html"class="nav-link">Dog Boarding</a>
-        <a href="gallery.html"     class="nav-link">Gallery</a>
-        <a href="prices.html"      class="nav-link">Prices</a>
-        <a href="contact.html"     class="btn-primary text-sm">Contact Us</a>
+        <a href="dog-boarding.html" class="nav-link">Dog Boarding</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="prices.html" class="nav-link">Prices</a>
+        <a href="contact.html" class="btn-primary text-sm">Contact Us</a>
       </div>
       <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg" aria-label="Toggle menu">
-        <svg id="menu-icon"  class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-        <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
       </button>
     </div>
     <div id="mobile-menu" class="md:hidden bg-white/95 backdrop-blur rounded-2xl mt-2 mx-2 shadow-lg">
       <div class="flex flex-col p-4 gap-1">
-        <a href="index.html"       class="nav-link py-3 px-4 rounded-xl hover:bg-cream block">Home</a>
-        <a href="about.html"       class="nav-link py-3 px-4 rounded-xl hover:bg-cream block">About Us</a>
+        <a href="index.html" class="nav-link py-3 px-4 rounded-xl hover:bg-cream block">Home</a>
+        <a href="about.html" class="nav-link py-3 px-4 rounded-xl hover:bg-cream block">About Us</a>
         <a href="dog-walking.html" class="nav-link py-3 px-4 rounded-xl hover:bg-cream block">Dog Walking</a>
-        <a href="dog-boarding.html"class="nav-link py-3 px-4 rounded-xl hover:bg-cream block">Dog Boarding</a>
-        <a href="gallery.html"     class="nav-link py-3 px-4 rounded-xl hover:bg-cream block">Gallery</a>
-        <a href="prices.html"      class="nav-link py-3 px-4 rounded-xl hover:bg-cream block">Prices</a>
-        <a href="contact.html"     class="btn-primary mt-2 justify-center">Contact Us</a>
+        <a href="dog-boarding.html" class="nav-link py-3 px-4 rounded-xl hover:bg-cream block">Dog Boarding</a>
+        <a href="gallery.html" class="nav-link py-3 px-4 rounded-xl hover:bg-cream block">Gallery</a>
+        <a href="prices.html" class="nav-link py-3 px-4 rounded-xl hover:bg-cream block">Prices</a>
+        <a href="contact.html" class="btn-primary mt-2 justify-center">Contact Us</a>
       </div>
     </div>
   </nav>
@@ -73,17 +80,19 @@
       <div class="py-14">
         <div class="hero-badge"><span>🦮</span> Dog Walking Service</div>
         <h1 class="font-playfair text-5xl font-bold leading-tight mb-5">
-          Walks That Make<br/><span class="text-sage-dark">Tails</span>
+          Walks That Make<br /><span class="text-sage-dark">Tails</span>
           <span class="font-dancing text-pink ml-2">Wag!</span>
         </h1>
-        <p class="text-gray-600 leading-relaxed mb-8 max-w-lg">Regular, reliable walks that keep your dog healthy, happy, and socialised. Whether rain or shine, we'll be there with leads ready and smiles on!</p>
+        <p class="text-gray-600 leading-relaxed mb-8 max-w-lg">Regular, reliable walks that keep your dog healthy,
+          happy, and socialised. Whether rain or shine, we'll be there with leads ready and smiles on!</p>
         <div class="flex flex-wrap gap-4">
           <a href="contact.html" class="btn-primary">Book a Walk 🐾</a>
-          <a href="prices.html"  class="btn-secondary">View Prices</a>
+          <a href="prices.html" class="btn-secondary">View Prices</a>
         </div>
       </div>
       <div class="hidden md:flex justify-end">
-        <img src="img/hero-walking.png" alt="Dog Walking" class="h-[420px] w-full object-cover rounded-tl-3xl rounded-tr-3xl shadow-xl"/>
+        <img src="img/hero-walking.png" alt="Dog Walking"
+          class="h-[420px] w-full object-cover rounded-tl-3xl rounded-tr-3xl shadow-xl" />
       </div>
     </div>
   </div>
@@ -100,17 +109,20 @@
         <div class="card p-8 reveal delay-100">
           <div class="service-icon-wrap bg-sage-pale">🐕</div>
           <h3 class="font-playfair text-xl font-bold mb-3">Solo Walk</h3>
-          <p class="text-gray-500 text-sm leading-relaxed mb-4">A dedicated one-on-one walk exclusively for your dog. Ideal for dogs who prefer solo adventures or need extra attention.</p>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">A dedicated one-on-one walk exclusively for your dog.
+            Ideal for dogs who prefer solo adventures or need extra attention.</p>
           <div class="border-t border-gray-100 pt-4 mt-4">
             <div class="text-2xl font-playfair font-bold text-sage-dark">From £15</div>
             <div class="text-xs text-gray-400">per 30-minute walk</div>
           </div>
         </div>
-        <div class="card p-8 border-2 border-pink-light reveal delay-200" style="background:linear-gradient(160deg,#fff,#FDEEF1)">
+        <div class="card p-8 border-2 border-pink-light reveal delay-200"
+          style="background:linear-gradient(160deg,#fff,#FDEEF1)">
           <div class="service-icon-wrap bg-pink-pale">🐕‍🦺</div>
           <div class="text-xs font-bold text-pink uppercase tracking-wider mb-3">Most Popular</div>
           <h3 class="font-playfair text-xl font-bold mb-3">Group Walk</h3>
-          <p class="text-gray-500 text-sm leading-relaxed mb-4">Small group walks (max 4 dogs) for socialisation and fun. Great for friendly, sociable dogs who love company.</p>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">Small group walks (max 4 dogs) for socialisation and
+            fun. Great for friendly, sociable dogs who love company.</p>
           <div class="border-t border-gray-100 pt-4 mt-4">
             <div class="text-2xl font-playfair font-bold text-pink-dark">From £12</div>
             <div class="text-xs text-gray-400">per 60-minute walk</div>
@@ -119,7 +131,8 @@
         <div class="card p-8 reveal delay-300">
           <div class="service-icon-wrap bg-sage-pale">⏰</div>
           <h3 class="font-playfair text-xl font-bold mb-3">Extended Walk</h3>
-          <p class="text-gray-500 text-sm leading-relaxed mb-4">Longer adventures for high-energy dogs. We explore new trails, parks, and open spaces for a truly satisfying outing.</p>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">Longer adventures for high-energy dogs. We explore new
+            trails, parks, and open spaces for a truly satisfying outing.</p>
           <div class="border-t border-gray-100 pt-4 mt-4">
             <div class="text-2xl font-playfair font-bold text-sage-dark">From £22</div>
             <div class="text-xs text-gray-400">per 90-minute walk</div>
@@ -134,39 +147,54 @@
     <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-14 items-center">
       <div class="reveal">
         <span class="section-label">Every Walk Includes</span>
-        <h2 class="section-title">More Than Just<br/>a Walk</h2>
+        <h2 class="section-title">More Than Just<br />a Walk</h2>
         <div class="section-divider"></div>
-        <p class="text-gray-500 leading-relaxed mb-6">We go above and beyond on every single walk to make sure your dog has the best possible time – and you have total peace of mind.</p>
+        <p class="text-gray-500 leading-relaxed mb-6">We go above and beyond on every single walk to make sure your dog
+          has the best possible time – and you have total peace of mind.</p>
         <div class="space-y-4">
           <div class="feature-item">
-            <div class="feature-dot"><svg viewBox="0 0 12 12"><path d="M1 6l3.5 3.5L11 2"/></svg></div>
+            <div class="feature-dot"><svg viewBox="0 0 12 12">
+                <path d="M1 6l3.5 3.5L11 2" />
+              </svg></div>
             <div><span class="font-medium text-sm">📍 GPS tracking</span> – see exactly where your dog has been</div>
           </div>
           <div class="feature-item">
-            <div class="feature-dot"><svg viewBox="0 0 12 12"><path d="M1 6l3.5 3.5L11 2"/></svg></div>
-            <div><span class="font-medium text-sm">📸 Photo & video updates</span> – sent directly to you during the walk</div>
+            <div class="feature-dot"><svg viewBox="0 0 12 12">
+                <path d="M1 6l3.5 3.5L11 2" />
+              </svg></div>
+            <div><span class="font-medium text-sm">📸 Photo & video updates</span> – sent directly to you during the
+              walk</div>
           </div>
           <div class="feature-item">
-            <div class="feature-dot"><svg viewBox="0 0 12 12"><path d="M1 6l3.5 3.5L11 2"/></svg></div>
+            <div class="feature-dot"><svg viewBox="0 0 12 12">
+                <path d="M1 6l3.5 3.5L11 2" />
+              </svg></div>
             <div><span class="font-medium text-sm">🚿 Paw clean on return</span> – no muddy floors!</div>
           </div>
           <div class="feature-item">
-            <div class="feature-dot"><svg viewBox="0 0 12 12"><path d="M1 6l3.5 3.5L11 2"/></svg></div>
+            <div class="feature-dot"><svg viewBox="0 0 12 12">
+                <path d="M1 6l3.5 3.5L11 2" />
+              </svg></div>
             <div><span class="font-medium text-sm">💧 Fresh water provided</span> – hydration on every walk</div>
           </div>
           <div class="feature-item">
-            <div class="feature-dot"><svg viewBox="0 0 12 12"><path d="M1 6l3.5 3.5L11 2"/></svg></div>
-            <div><span class="font-medium text-sm">📋 Walk report card</span> – how your dog behaved and enjoyed it</div>
+            <div class="feature-dot"><svg viewBox="0 0 12 12">
+                <path d="M1 6l3.5 3.5L11 2" />
+              </svg></div>
+            <div><span class="font-medium text-sm">📋 Walk report card</span> – how your dog behaved and enjoyed it
+            </div>
           </div>
           <div class="feature-item">
-            <div class="feature-dot"><svg viewBox="0 0 12 12"><path d="M1 6l3.5 3.5L11 2"/></svg></div>
+            <div class="feature-dot"><svg viewBox="0 0 12 12">
+                <path d="M1 6l3.5 3.5L11 2" />
+              </svg></div>
             <div><span class="font-medium text-sm">🛡️ Fully insured</span> – complete cover throughout every walk</div>
           </div>
         </div>
       </div>
       <div class="reveal delay-200">
         <div class="hero-img-frame">
-          <img src="img/hero-walking.png" alt="Happy dog on a walk" class="w-full h-[460px] object-cover rounded-3xl"/>
+          <img src="img/hero-walking.png" alt="Happy dog on a walk" class="w-full h-[460px] object-cover rounded-3xl" />
         </div>
       </div>
     </div>
@@ -182,28 +210,36 @@
       </div>
       <div class="grid md:grid-cols-4 gap-6">
         <div class="text-center reveal delay-100">
-          <div class="w-14 h-14 bg-sage-pale rounded-full flex items-center justify-center text-2xl mx-auto mb-4">📩</div>
+          <div class="w-14 h-14 bg-sage-pale rounded-full flex items-center justify-center text-2xl mx-auto mb-4">📩
+          </div>
           <div class="font-bold text-sage-dark text-sm mb-1">Step 1</div>
           <h3 class="font-playfair font-bold text-lg mb-2">Get in Touch</h3>
-          <p class="text-gray-500 text-xs leading-relaxed">Fill in our contact form or give us a call to enquire about availability.</p>
+          <p class="text-gray-500 text-xs leading-relaxed">Fill in our contact form or give us a call to enquire about
+            availability.</p>
         </div>
         <div class="text-center reveal delay-200">
-          <div class="w-14 h-14 bg-pink-pale rounded-full flex items-center justify-center text-2xl mx-auto mb-4">🤝</div>
+          <div class="w-14 h-14 bg-pink-pale rounded-full flex items-center justify-center text-2xl mx-auto mb-4">🤝
+          </div>
           <div class="font-bold text-pink-dark text-sm mb-1">Step 2</div>
           <h3 class="font-playfair font-bold text-lg mb-2">Meet & Greet</h3>
-          <p class="text-gray-500 text-xs leading-relaxed">Free introductory meeting so we can get to know your dog and discuss their needs.</p>
+          <p class="text-gray-500 text-xs leading-relaxed">Free introductory meeting so we can get to know your dog and
+            discuss their needs.</p>
         </div>
         <div class="text-center reveal delay-300">
-          <div class="w-14 h-14 bg-sage-pale rounded-full flex items-center justify-center text-2xl mx-auto mb-4">📅</div>
+          <div class="w-14 h-14 bg-sage-pale rounded-full flex items-center justify-center text-2xl mx-auto mb-4">📅
+          </div>
           <div class="font-bold text-sage-dark text-sm mb-1">Step 3</div>
           <h3 class="font-playfair font-bold text-lg mb-2">Schedule Walks</h3>
-          <p class="text-gray-500 text-xs leading-relaxed">Choose your preferred days and times. Regular slots can be reserved.</p>
+          <p class="text-gray-500 text-xs leading-relaxed">Choose your preferred days and times. Regular slots can be
+            reserved.</p>
         </div>
         <div class="text-center reveal delay-400">
-          <div class="w-14 h-14 bg-pink-pale rounded-full flex items-center justify-center text-2xl mx-auto mb-4">🦮</div>
+          <div class="w-14 h-14 bg-pink-pale rounded-full flex items-center justify-center text-2xl mx-auto mb-4">🦮
+          </div>
           <div class="font-bold text-pink-dark text-sm mb-1">Step 4</div>
           <h3 class="font-playfair font-bold text-lg mb-2">Happy Walks!</h3>
-          <p class="text-gray-500 text-xs leading-relaxed">Sit back and enjoy the updates as your dog has the time of their life!</p>
+          <p class="text-gray-500 text-xs leading-relaxed">Sit back and enjoy the updates as your dog has the time of
+            their life!</p>
         </div>
       </div>
     </div>
@@ -215,7 +251,9 @@
       <div class="text-4xl mb-4">🦮</div>
       <h2 class="font-playfair text-3xl font-bold text-white mb-4">Ready to Book a Walk?</h2>
       <p class="text-white/80 mb-7">Contact us today and we'll get your pup's first walk on the calendar!</p>
-      <a href="contact.html" class="bg-white text-sage-dark font-semibold px-8 py-3 rounded-full hover:bg-cream transition-all hover:shadow-lg inline-block">Book Now 🐾</a>
+      <a href="contact.html"
+        class="bg-white text-sage-dark font-semibold px-8 py-3 rounded-full hover:bg-cream transition-all hover:shadow-lg inline-block">Book
+        Now 🐾</a>
     </div>
   </section>
 
@@ -228,14 +266,27 @@
             <span class="font-playfair font-bold text-xl">Wagging</span>
             <span class="font-dancing text-xl text-pink">Mama</span>
           </div>
-          <p class="text-white/60 text-sm leading-relaxed mb-5 max-w-xs">Professional dog walking & home boarding, delivered with love.</p>
+          <p class="text-white/60 text-sm leading-relaxed mb-5 max-w-xs">Professional dog walking & home boarding,
+            delivered with love. Trusted by families across the area.</p>
+          <div class="flex gap-4">
+            <a href="#"
+              class="w-9 h-9 bg-white/10 rounded-full flex items-center justify-center hover:bg-pink transition-colors text-sm"
+              aria-label="Facebook">f</a>
+            <a href="#"
+              class="w-9 h-9 bg-white/10 rounded-full flex items-center justify-center hover:bg-pink transition-colors text-sm"
+              aria-label="Instagram">ig</a>
+            <a href="https://wa.me/07803326822"
+              class="w-9 h-9 bg-white/10 rounded-full flex items-center justify-center hover:bg-pink transition-colors text-sm"
+              aria-label="Instagram">wh</a>
+          </div>
         </div>
         <div>
           <h4 class="font-semibold mb-4 text-sm tracking-wider uppercase text-white/80">Services</h4>
           <ul class="space-y-2">
-            <li><a href="dog-walking.html"  class="footer-link">Dog Walking</a></li>
+            <li><a href="dog-walking.html" class="footer-link">Dog Walking</a></li>
             <li><a href="dog-boarding.html" class="footer-link">Dog Boarding</a></li>
-            <li><a href="prices.html"       class="footer-link">Prices</a></li>
+            <li><a href="prices.html" class="footer-link">Prices</a></li>
+            <li><a href="gallery.html" class="footer-link">Gallery</a></li>
           </ul>
         </div>
         <div>
@@ -243,15 +294,17 @@
           <ul class="space-y-2">
             <li class="text-white/60 text-sm">📞 07XXX XXXXXX</li>
             <li class="text-white/60 text-sm">📧 hello@waggingmama.co.uk</li>
+            <li class="text-white/60 text-sm">📍 Your Local Area</li>
           </ul>
         </div>
       </div>
       <div class="border-t border-white/10 pt-6 text-center">
-        <p class="text-white/40 text-xs">© 2025 Wagging Mama. All rights reserved.</p>
+        <p class="text-white/40 text-xs">© 2025 Wagging Mama. All rights reserved. Made with ❤️ for dogs everywhere.</p>
       </div>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
 </body>
+
 </html>

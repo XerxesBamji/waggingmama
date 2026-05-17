@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Dog boarding with Wagging Mama – a cosy, home-from-home stay for your dog while you're away." />
+  <meta name="description"
+    content="Dog boarding with Wagging Mama – a cosy, home-from-home stay for your dog while you're away." />
   <title>Dog Boarding | Wagging Mama</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -11,14 +13,14 @@
       theme: {
         extend: {
           colors: {
-            sage:  { DEFAULT:'#7A9E7E', dark:'#5c8060', light:'#A8C5AB', pale:'#E8F0E9' },
-            pink:  { DEFAULT:'#E8889A', dark:'#c96a7d', light:'#F2AABA', pale:'#FDEEF1' },
-            cream: { DEFAULT:'#FAF7F4', dark:'#F0EBE5' },
+            sage: { DEFAULT: '#7A9E7E', dark: '#5c8060', light: '#A8C5AB', pale: '#E8F0E9' },
+            pink: { DEFAULT: '#E8889A', dark: '#c96a7d', light: '#F2AABA', pale: '#FDEEF1' },
+            cream: { DEFAULT: '#FAF7F4', dark: '#F0EBE5' },
           },
           fontFamily: {
-            playfair: ['"Playfair Display"','serif'],
-            dancing:  ['"Dancing Script"','cursive'],
-            inter:    ['Inter','sans-serif'],
+            playfair: ['"Playfair Display"', 'serif'],
+            dancing: ['"Dancing Script"', 'cursive'],
+            inter: ['Inter', 'sans-serif'],
           },
         }
       }
@@ -26,41 +28,46 @@
   </script>
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body class="bg-cream">
 
   <!-- ===== NAVBAR ===== -->
   <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-cream/90 backdrop-blur-sm py-3 px-6">
     <div class="max-w-6xl mx-auto flex items-center justify-between">
       <a href="index.html" class="flex items-center gap-3">
-        <img src="img/logo.png" alt="Wagging Mama" class="h-14 w-auto" onerror="this.style.display='none'"/>
+        <img src="img/logo.png" alt="Wagging Mama" class="h-14 w-auto" onerror="this.style.display='none'" />
         <div class="leading-tight">
           <span class="font-playfair font-bold text-xl text-[#2D2D2D]">Wagging</span>
           <span class="font-dancing text-xl text-pink ml-1">Mama</span>
         </div>
       </a>
       <div class="hidden md:flex items-center gap-8">
-        <a href="index.html"       class="nav-link">Home</a>
-        <a href="about.html"       class="nav-link">About</a>
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
         <a href="dog-walking.html" class="nav-link">Dog Walking</a>
-        <a href="dog-boarding.html"class="nav-link active">Dog Boarding</a>
-        <a href="gallery.html"     class="nav-link">Gallery</a>
-        <a href="prices.html"      class="nav-link">Prices</a>
-        <a href="contact.html"     class="btn-primary text-sm">Contact Us</a>
+        <a href="dog-boarding.html" class="nav-link active">Dog Boarding</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="prices.html" class="nav-link">Prices</a>
+        <a href="contact.html" class="btn-primary text-sm">Contact Us</a>
       </div>
       <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg" aria-label="Toggle menu">
-        <svg id="menu-icon"  class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-        <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
       </button>
     </div>
     <div id="mobile-menu" class="md:hidden bg-white/95 backdrop-blur rounded-2xl mt-2 mx-2 shadow-lg">
       <div class="flex flex-col p-4 gap-1">
-        <a href="index.html"       class="nav-link py-3 px-4 rounded-xl hover:bg-cream block">Home</a>
-        <a href="about.html"       class="nav-link py-3 px-4 rounded-xl hover:bg-cream block">About Us</a>
+        <a href="index.html" class="nav-link py-3 px-4 rounded-xl hover:bg-cream block">Home</a>
+        <a href="about.html" class="nav-link py-3 px-4 rounded-xl hover:bg-cream block">About Us</a>
         <a href="dog-walking.html" class="nav-link py-3 px-4 rounded-xl hover:bg-cream block">Dog Walking</a>
-        <a href="dog-boarding.html"class="nav-link py-3 px-4 rounded-xl hover:bg-cream block">Dog Boarding</a>
-        <a href="gallery.html"     class="nav-link py-3 px-4 rounded-xl hover:bg-cream block">Gallery</a>
-        <a href="prices.html"      class="nav-link py-3 px-4 rounded-xl hover:bg-cream block">Prices</a>
-        <a href="contact.html"     class="btn-primary mt-2 justify-center">Contact Us</a>
+        <a href="dog-boarding.html" class="nav-link py-3 px-4 rounded-xl hover:bg-cream block">Dog Boarding</a>
+        <a href="gallery.html" class="nav-link py-3 px-4 rounded-xl hover:bg-cream block">Gallery</a>
+        <a href="prices.html" class="nav-link py-3 px-4 rounded-xl hover:bg-cream block">Prices</a>
+        <a href="contact.html" class="btn-primary mt-2 justify-center">Contact Us</a>
       </div>
     </div>
   </nav>
@@ -70,19 +77,23 @@
     <span class="paw-decoration" style="top:10%;left:5%;font-size:7rem;transform:rotate(-10deg)">🐾</span>
     <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-end">
       <div class="py-14">
-        <div class="hero-badge" style="background:rgba(232,136,154,0.12);color:#c96a7d;border-color:rgba(232,136,154,0.3)"><span>🏡</span> Home Boarding Service</div>
+        <div class="hero-badge"
+          style="background:rgba(232,136,154,0.12);color:#c96a7d;border-color:rgba(232,136,154,0.3)"><span>🏡</span>
+          Home Boarding Service</div>
         <h1 class="font-playfair text-5xl font-bold leading-tight mb-5">
-          A Home Away<br/>From
+          A Home Away<br />From
           <span class="font-dancing text-pink">Home</span>
         </h1>
-        <p class="text-gray-600 leading-relaxed mb-8 max-w-lg">No cold kennels here. Your dog stays in our warm, comfortable home, surrounded by love and care — just as they deserve.</p>
+        <p class="text-gray-600 leading-relaxed mb-8 max-w-lg">No cold kennels here. Your dog stays in our warm,
+          comfortable home, surrounded by love and care — just as they deserve.</p>
         <div class="flex flex-wrap gap-4">
           <a href="contact.html" class="btn-primary">Enquire Now 🏡</a>
-          <a href="prices.html"  class="btn-outline-pink">View Prices</a>
+          <a href="prices.html" class="btn-outline-pink">View Prices</a>
         </div>
       </div>
       <div class="hidden md:flex justify-end">
-        <img src="img/boarding-cozy.png" alt="Dog boarding" class="h-[420px] w-full object-cover rounded-tl-3xl rounded-tr-3xl shadow-xl"/>
+        <img src="img/boarding-cozy.png" alt="Dog boarding"
+          class="h-[420px] w-full object-cover rounded-tl-3xl rounded-tr-3xl shadow-xl" />
       </div>
     </div>
   </div>
@@ -92,30 +103,41 @@
     <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-14 items-center">
       <div class="reveal">
         <div class="hero-img-frame">
-          <img src="img/boarding-cozy.png" alt="Cozy dog boarding" class="w-full h-[460px] object-cover rounded-3xl"/>
+          <img src="img/boarding-cozy.png" alt="Cozy dog boarding" class="w-full h-[460px] object-cover rounded-3xl" />
         </div>
       </div>
       <div class="reveal delay-200">
         <span class="section-label">Why Choose Boarding?</span>
-        <h2 class="section-title">Holiday Peace of<br/>Mind</h2>
+        <h2 class="section-title">Holiday Peace of<br />Mind</h2>
         <div class="section-divider"></div>
-        <p class="text-gray-600 leading-relaxed mb-5">Traditional kennels can be stressful for dogs. Our home boarding offers a relaxed, familiar environment where your dog can truly relax. They'll be treated as part of the family throughout their stay.</p>
-        <p class="text-gray-600 leading-relaxed mb-7">You'll receive daily photo and video updates, so you can enjoy your holiday knowing your furry friend is perfectly content.</p>
+        <p class="text-gray-600 leading-relaxed mb-5">Traditional kennels can be stressful for dogs. Our home boarding
+          offers a relaxed, familiar environment where your dog can truly relax. They'll be treated as part of the
+          family throughout their stay.</p>
+        <p class="text-gray-600 leading-relaxed mb-7">You'll receive daily photo and video updates, so you can enjoy
+          your holiday knowing your furry friend is perfectly content.</p>
         <div class="space-y-3">
           <div class="feature-item">
-            <div class="feature-dot"><svg viewBox="0 0 12 12"><path d="M1 6l3.5 3.5L11 2"/></svg></div>
+            <div class="feature-dot"><svg viewBox="0 0 12 12">
+                <path d="M1 6l3.5 3.5L11 2" />
+              </svg></div>
             <span class="text-gray-600 text-sm">Stays from 1 night to extended periods</span>
           </div>
           <div class="feature-item">
-            <div class="feature-dot"><svg viewBox="0 0 12 12"><path d="M1 6l3.5 3.5L11 2"/></svg></div>
+            <div class="feature-dot"><svg viewBox="0 0 12 12">
+                <path d="M1 6l3.5 3.5L11 2" />
+              </svg></div>
             <span class="text-gray-600 text-sm">Maximum 1–2 dogs boarding at a time</span>
           </div>
           <div class="feature-item">
-            <div class="feature-dot"><svg viewBox="0 0 12 12"><path d="M1 6l3.5 3.5L11 2"/></svg></div>
+            <div class="feature-dot"><svg viewBox="0 0 12 12">
+                <path d="M1 6l3.5 3.5L11 2" />
+              </svg></div>
             <span class="text-gray-600 text-sm">Daily walks & garden time included</span>
           </div>
           <div class="feature-item">
-            <div class="feature-dot"><svg viewBox="0 0 12 12"><path d="M1 6l3.5 3.5L11 2"/></svg></div>
+            <div class="feature-dot"><svg viewBox="0 0 12 12">
+                <path d="M1 6l3.5 3.5L11 2" />
+              </svg></div>
             <span class="text-gray-600 text-sm">Your dog's own food & routine followed</span>
           </div>
         </div>
@@ -128,39 +150,45 @@
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-14 reveal">
         <span class="section-label">Every Stay Includes</span>
-        <h2 class="section-title">The Full Boarding<br/>Experience</h2>
+        <h2 class="section-title">The Full Boarding<br />Experience</h2>
         <div class="section-divider centered"></div>
       </div>
       <div class="grid md:grid-cols-3 gap-6">
         <div class="card p-7 reveal delay-100">
           <div class="text-3xl mb-3">🛏️</div>
           <h3 class="font-playfair font-bold text-lg mb-2">Cosy Sleeping Space</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">A dedicated, comfortable sleeping area with their own bedding. Bring their favourite bed if it helps them settle!</p>
+          <p class="text-gray-500 text-sm leading-relaxed">A dedicated, comfortable sleeping area with their own
+            bedding. Bring their favourite bed if it helps them settle!</p>
         </div>
         <div class="card p-7 reveal delay-200">
           <div class="text-3xl mb-3">🌿</div>
           <h3 class="font-playfair font-bold text-lg mb-2">Garden Access</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">A safe, secure, fully enclosed garden where dogs can sniff, explore, and stretch their legs throughout the day.</p>
+          <p class="text-gray-500 text-sm leading-relaxed">A safe, secure, fully enclosed garden where dogs can sniff,
+            explore, and stretch their legs throughout the day.</p>
         </div>
         <div class="card p-7 reveal delay-300">
           <div class="text-3xl mb-3">🦮</div>
           <h3 class="font-playfair font-bold text-lg mb-2">Daily Walks</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">At least one walk per day included in every overnight stay. Additional walks available on request.</p>
+          <p class="text-gray-500 text-sm leading-relaxed">At least one walk per day included in every overnight stay.
+            Additional walks available on request.</p>
         </div>
         <div class="card p-7 reveal delay-100">
           <div class="text-3xl mb-3">📸</div>
           <h3 class="font-playfair font-bold text-lg mb-2">Daily Updates</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">Morning and evening photo/video updates so you can see how much fun your dog is having without you!</p>
+          <p class="text-gray-500 text-sm leading-relaxed">Morning and evening photo/video updates so you can see how
+            much fun your dog is having without you!</p>
         </div>
         <div class="card p-7 reveal delay-200">
           <div class="text-3xl mb-3">🍽️</div>
           <h3 class="font-playfair font-bold text-lg mb-2">Feeding to Routine</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">We follow your dog's exact feeding schedule and dietary requirements. Just bring their food and we'll do the rest.</p>
+          <p class="text-gray-500 text-sm leading-relaxed">We follow your dog's exact feeding schedule and dietary
+            requirements. Just bring their food and we'll do the rest.</p>
         </div>
         <div class="card p-7 reveal delay-300">
           <div class="text-3xl mb-3">💊</div>
           <h3 class="font-playfair font-bold text-lg mb-2">Medication Admin</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">Happy to administer any prescribed medication. Please bring clearly labelled medication and written instructions.</p>
+          <p class="text-gray-500 text-sm leading-relaxed">Happy to administer any prescribed medication. Please bring
+            clearly labelled medication and written instructions.</p>
         </div>
       </div>
     </div>
@@ -180,28 +208,35 @@
             Does my dog need to be vaccinated?
             <span class="text-sage transition-transform group-open:rotate-180">▼</span>
           </summary>
-          <p class="text-gray-500 text-sm mt-3 leading-relaxed">Yes, all dogs must be up-to-date with their core vaccinations (including Kennel Cough) to stay with us. Please bring your dog's vaccination records at the meet & greet.</p>
+          <p class="text-gray-500 text-sm mt-3 leading-relaxed">Yes, all dogs must be up-to-date with their core
+            vaccinations (including Kennel Cough) to stay with us. Please bring your dog's vaccination records at the
+            meet & greet.</p>
         </details>
         <details class="bg-cream rounded-2xl p-6 reveal delay-200 group cursor-pointer">
           <summary class="font-semibold text-[#2D2D2D] flex justify-between items-center list-none">
             How many dogs board at once?
             <span class="text-sage transition-transform group-open:rotate-180">▼</span>
           </summary>
-          <p class="text-gray-500 text-sm mt-3 leading-relaxed">We keep boarding numbers intentionally small – a maximum of 1–2 dogs at any one time, depending on size and compatibility. This ensures personalised attention for every dog.</p>
+          <p class="text-gray-500 text-sm mt-3 leading-relaxed">We keep boarding numbers intentionally small – a maximum
+            of 1–2 dogs at any one time, depending on size and compatibility. This ensures personalised attention for
+            every dog.</p>
         </details>
         <details class="bg-cream rounded-2xl p-6 reveal delay-300 group cursor-pointer">
           <summary class="font-semibold text-[#2D2D2D] flex justify-between items-center list-none">
             Can I bring my dog's own bed and toys?
             <span class="text-sage transition-transform group-open:rotate-180">▼</span>
           </summary>
-          <p class="text-gray-500 text-sm mt-3 leading-relaxed">Absolutely! We actively encourage it. Familiar scents and favourite toys help dogs settle in quickly and feel at home.</p>
+          <p class="text-gray-500 text-sm mt-3 leading-relaxed">Absolutely! We actively encourage it. Familiar scents
+            and favourite toys help dogs settle in quickly and feel at home.</p>
         </details>
         <details class="bg-cream rounded-2xl p-6 reveal delay-400 group cursor-pointer">
           <summary class="font-semibold text-[#2D2D2D] flex justify-between items-center list-none">
             What are your drop-off and pick-up times?
             <span class="text-sage transition-transform group-open:rotate-180">▼</span>
           </summary>
-          <p class="text-gray-500 text-sm mt-3 leading-relaxed">Drop-off is usually between 8am–10am and collection between 4pm–6pm. We're flexible where possible – just let us know your situation and we'll do our best to accommodate.</p>
+          <p class="text-gray-500 text-sm mt-3 leading-relaxed">Drop-off is usually between 8am–10am and collection
+            between 4pm–6pm. We're flexible where possible – just let us know your situation and we'll do our best to
+            accommodate.</p>
         </details>
       </div>
     </div>
@@ -212,8 +247,11 @@
     <div class="max-w-2xl mx-auto text-center reveal">
       <div class="text-4xl mb-4">🏡</div>
       <h2 class="font-playfair text-3xl font-bold text-white mb-4">Going Away? We've Got It Covered.</h2>
-      <p class="text-white/80 mb-7">Book your dog's home-away-from-home today and enjoy your holiday without a worry in the world.</p>
-      <a href="contact.html" class="bg-white text-pink-dark font-semibold px-8 py-3 rounded-full hover:bg-cream transition-all hover:shadow-lg inline-block">Enquire About Boarding 🐾</a>
+      <p class="text-white/80 mb-7">Book your dog's home-away-from-home today and enjoy your holiday without a worry in
+        the world.</p>
+      <a href="contact.html"
+        class="bg-white text-pink-dark font-semibold px-8 py-3 rounded-full hover:bg-cream transition-all hover:shadow-lg inline-block">Enquire
+        About Boarding 🐾</a>
     </div>
   </section>
 
@@ -226,14 +264,27 @@
             <span class="font-playfair font-bold text-xl">Wagging</span>
             <span class="font-dancing text-xl text-pink">Mama</span>
           </div>
-          <p class="text-white/60 text-sm leading-relaxed mb-5 max-w-xs">Professional dog walking & home boarding, delivered with love.</p>
+          <p class="text-white/60 text-sm leading-relaxed mb-5 max-w-xs">Professional dog walking & home boarding,
+            delivered with love. Trusted by families across the area.</p>
+          <div class="flex gap-4">
+            <a href="#"
+              class="w-9 h-9 bg-white/10 rounded-full flex items-center justify-center hover:bg-pink transition-colors text-sm"
+              aria-label="Facebook">f</a>
+            <a href="#"
+              class="w-9 h-9 bg-white/10 rounded-full flex items-center justify-center hover:bg-pink transition-colors text-sm"
+              aria-label="Instagram">ig</a>
+            <a href="https://wa.me/07803326822"
+              class="w-9 h-9 bg-white/10 rounded-full flex items-center justify-center hover:bg-pink transition-colors text-sm"
+              aria-label="Instagram">wh</a>
+          </div>
         </div>
         <div>
           <h4 class="font-semibold mb-4 text-sm tracking-wider uppercase text-white/80">Services</h4>
           <ul class="space-y-2">
-            <li><a href="dog-walking.html"  class="footer-link">Dog Walking</a></li>
+            <li><a href="dog-walking.html" class="footer-link">Dog Walking</a></li>
             <li><a href="dog-boarding.html" class="footer-link">Dog Boarding</a></li>
-            <li><a href="prices.html"       class="footer-link">Prices</a></li>
+            <li><a href="prices.html" class="footer-link">Prices</a></li>
+            <li><a href="gallery.html" class="footer-link">Gallery</a></li>
           </ul>
         </div>
         <div>
@@ -241,15 +292,17 @@
           <ul class="space-y-2">
             <li class="text-white/60 text-sm">📞 07XXX XXXXXX</li>
             <li class="text-white/60 text-sm">📧 hello@waggingmama.co.uk</li>
+            <li class="text-white/60 text-sm">📍 Your Local Area</li>
           </ul>
         </div>
       </div>
       <div class="border-t border-white/10 pt-6 text-center">
-        <p class="text-white/40 text-xs">© 2025 Wagging Mama. All rights reserved.</p>
+        <p class="text-white/40 text-xs">© 2025 Wagging Mama. All rights reserved. Made with ❤️ for dogs everywhere.</p>
       </div>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
 </body>
+
 </html>
