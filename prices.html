@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Wagging Mama pricing – transparent, affordable dog walking and boarding rates with no hidden fees." />
+  <title>Prices | Wagging Mama</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            sage:  { DEFAULT:'#7A9E7E', dark:'#5c8060', light:'#A8C5AB', pale:'#E8F0E9' },
+            pink:  { DEFAULT:'#E8889A', dark:'#c96a7d', light:'#F2AABA', pale:'#FDEEF1' },
+            cream: { DEFAULT:'#FAF7F4', dark:'#F0EBE5' },
+          },
+          fontFamily: {
+            playfair: ['"Playfair Display"','serif'],
+            dancing:  ['"Dancing Script"','cursive'],
+            inter:    ['Inter','sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="bg-cream">
+
+  <!-- ===== NAVBAR ===== -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-cream/90 backdrop-blur-sm py-3 px-6">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="img/logo.png" alt="Wagging Mama" class="h-14 w-auto" onerror="this.style.display='none'"/>
+        <div class="leading-tight">
+          <span class="font-playfair font-bold text-xl text-[#2D2D2D]">Wagging</span>
+          <span class="font-dancing text-xl text-pink ml-1">Mama</span>
+        </div>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html"       class="nav-link">Home</a>
+        <a href="about.html"       class="nav-link">About</a>
+        <a href="dog-walking.html" class="nav-link">Dog Walking</a>
+        <a href="dog-boarding.html"class="nav-link">Dog Boarding</a>
+        <a href="gallery.html"     class="nav-link">Gallery</a>
+        <a href="prices.html"      class="nav-link active">Prices</a>
+        <a href="contact.html"     class="btn-primary text-sm">Contact Us</a>
+      </div>
+      <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg" aria-label="Toggle menu">
+        <svg id="menu-icon"  class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="md:hidden bg-white/95 backdrop-blur rounded-2xl mt-2 mx-2 shadow-lg">
+      <div class="flex flex-col p-4 gap-1">
+        <a href="index.html"       class="nav-link py-3 px-4 rounded-xl hover:bg-cream block">Home</a>
+        <a href="about.html"       class="nav-link py-3 px-4 rounded-xl hover:bg-cream block">About Us</a>
+        <a href="dog-walking.html" class="nav-link py-3 px-4 rounded-xl hover:bg-cream block">Dog Walking</a>
+        <a href="dog-boarding.html"class="nav-link py-3 px-4 rounded-xl hover:bg-cream block">Dog Boarding</a>
+        <a href="gallery.html"     class="nav-link py-3 px-4 rounded-xl hover:bg-cream block">Gallery</a>
+        <a href="prices.html"      class="nav-link py-3 px-4 rounded-xl hover:bg-cream block">Prices</a>
+        <a href="contact.html"     class="btn-primary mt-2 justify-center">Contact Us</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== PAGE HEADER ===== -->
+  <div class="pt-28 pb-12 px-6 text-center" style="background:linear-gradient(160deg,#E8F0E9 0%,#FAF7F4 60%,#FDEEF1 100%)">
+    <div class="max-w-2xl mx-auto">
+      <span class="section-label">Simple & Transparent</span>
+      <h1 class="section-title">Our Prices</h1>
+      <div class="section-divider centered"></div>
+      <p class="text-gray-500 leading-relaxed">No hidden fees, no nasty surprises — just honest, competitive pricing for exceptional care.</p>
+    </div>
+  </div>
+
+  <!-- ===== WALKING PRICES ===== -->
+  <section class="py-20 px-6 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14 reveal">
+        <span class="section-label">Dog Walking</span>
+        <h2 class="section-title">Walking Packages</h2>
+        <div class="section-divider centered"></div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <!-- Solo Walk -->
+        <div class="price-card reveal delay-100">
+          <h3 class="font-playfair text-2xl font-bold mb-1">Solo Walk</h3>
+          <p class="text-gray-400 text-sm mb-6">One-on-one, dedicated time</p>
+          <div class="mb-6">
+            <span class="font-playfair text-5xl font-bold text-sage-dark">£15</span>
+            <span class="text-gray-400 text-sm ml-1">/ 30 mins</span>
+          </div>
+          <div class="text-3xl font-playfair font-bold text-sage-dark mb-1">£20</div>
+          <div class="text-gray-400 text-sm mb-6">/ 60 mins</div>
+          <ul class="space-y-3 mb-8 text-sm text-gray-600">
+            <li class="flex items-center gap-2"><span class="text-sage">✓</span> Your dog only</li>
+            <li class="flex items-center gap-2"><span class="text-sage">✓</span> GPS tracked</li>
+            <li class="flex items-center gap-2"><span class="text-sage">✓</span> Photo updates</li>
+            <li class="flex items-center gap-2"><span class="text-sage">✓</span> Paw clean on return</li>
+            <li class="flex items-center gap-2"><span class="text-sage">✓</span> Walk report card</li>
+          </ul>
+          <a href="contact.html" class="btn-secondary w-full justify-center">Book Now</a>
+        </div>
+
+        <!-- Group Walk – Featured -->
+        <div class="price-card featured reveal delay-200">
+          <div class="price-badge">Most Popular</div>
+          <h3 class="font-playfair text-2xl font-bold mb-1">Group Walk</h3>
+          <p class="text-gray-400 text-sm mb-6">Small group, max 4 dogs</p>
+          <div class="mb-2">
+            <span class="font-playfair text-5xl font-bold text-pink-dark">£12</span>
+            <span class="text-gray-400 text-sm ml-1">/ 60 mins</span>
+          </div>
+          <div class="text-gray-400 text-sm mb-6">Socialisation & fun!</div>
+          <ul class="space-y-3 mb-8 text-sm text-gray-600">
+            <li class="flex items-center gap-2"><span class="text-pink">✓</span> Max 4 dogs per group</li>
+            <li class="flex items-center gap-2"><span class="text-pink">✓</span> GPS tracked</li>
+            <li class="flex items-center gap-2"><span class="text-pink">✓</span> Photo updates</li>
+            <li class="flex items-center gap-2"><span class="text-pink">✓</span> Paw clean on return</li>
+            <li class="flex items-center gap-2"><span class="text-pink">✓</span> Great for socialisation</li>
+          </ul>
+          <a href="contact.html" class="btn-primary w-full justify-center">Book Now</a>
+        </div>
+
+        <!-- Extended Walk -->
+        <div class="price-card reveal delay-300">
+          <h3 class="font-playfair text-2xl font-bold mb-1">Extended Walk</h3>
+          <p class="text-gray-400 text-sm mb-6">For high-energy explorers</p>
+          <div class="mb-6">
+            <span class="font-playfair text-5xl font-bold text-sage-dark">£22</span>
+            <span class="text-gray-400 text-sm ml-1">/ 90 mins</span>
+          </div>
+          <ul class="space-y-3 mb-8 text-sm text-gray-600">
+            <li class="flex items-center gap-2"><span class="text-sage">✓</span> Longer countryside routes</li>
+            <li class="flex items-center gap-2"><span class="text-sage">✓</span> GPS tracked</li>
+            <li class="flex items-center gap-2"><span class="text-sage">✓</span> Multiple photo updates</li>
+            <li class="flex items-center gap-2"><span class="text-sage">✓</span> Paw clean on return</li>
+            <li class="flex items-center gap-2"><span class="text-sage">✓</span> Ideal for active breeds</li>
+          </ul>
+          <a href="contact.html" class="btn-secondary w-full justify-center">Book Now</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BOARDING PRICES ===== -->
+  <section class="py-20 px-6 bg-cream">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14 reveal">
+        <span class="section-label">Dog Boarding</span>
+        <h2 class="section-title">Boarding Rates</h2>
+        <div class="section-divider centered"></div>
+        <p class="text-gray-500 max-w-xl mx-auto">All boarding includes daily walks, garden access, feeding to routine, and daily photo updates.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+
+        <!-- Overnight -->
+        <div class="price-card reveal delay-100">
+          <h3 class="font-playfair text-2xl font-bold mb-1">Overnight Stay</h3>
+          <p class="text-gray-400 text-sm mb-6">Drop off & collect next day</p>
+          <div class="mb-6">
+            <span class="font-playfair text-5xl font-bold text-sage-dark">£35</span>
+            <span class="text-gray-400 text-sm ml-1">/ night</span>
+          </div>
+          <ul class="space-y-3 mb-8 text-sm text-gray-600">
+            <li class="flex items-center gap-2"><span class="text-sage">✓</span> Cosy sleeping space</li>
+            <li class="flex items-center gap-2"><span class="text-sage">✓</span> 1 walk included</li>
+            <li class="flex items-center gap-2"><span class="text-sage">✓</span> Garden access all day</li>
+            <li class="flex items-center gap-2"><span class="text-sage">✓</span> Daily photo updates</li>
+            <li class="flex items-center gap-2"><span class="text-sage">✓</span> Fed to your routine</li>
+          </ul>
+          <a href="contact.html" class="btn-secondary w-full justify-center">Enquire Now</a>
+        </div>
+
+        <!-- Weekly Stay – Featured -->
+        <div class="price-card featured reveal delay-200">
+          <div class="price-badge">Best Value</div>
+          <h3 class="font-playfair text-2xl font-bold mb-1">Weekly Stay</h3>
+          <p class="text-gray-400 text-sm mb-6">7 nights – ideal for holidays</p>
+          <div class="mb-2">
+            <span class="font-playfair text-5xl font-bold text-pink-dark">£220</span>
+            <span class="text-gray-400 text-sm ml-1">/ week</span>
+          </div>
+          <div class="text-xs text-pink-dark font-semibold mb-6">Save £25 vs nightly rate!</div>
+          <ul class="space-y-3 mb-8 text-sm text-gray-600">
+            <li class="flex items-center gap-2"><span class="text-pink">✓</span> Everything in overnight</li>
+            <li class="flex items-center gap-2"><span class="text-pink">✓</span> 2 walks per day</li>
+            <li class="flex items-center gap-2"><span class="text-pink">✓</span> Extra playtime & cuddles</li>
+            <li class="flex items-center gap-2"><span class="text-pink">✓</span> Daily video updates</li>
+            <li class="flex items-center gap-2"><span class="text-pink">✓</span> Flexible drop-off/pickup</li>
+          </ul>
+          <a href="contact.html" class="btn-primary w-full justify-center">Enquire Now</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ADD ONS ===== -->
+  <section class="py-20 px-6 bg-white">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-12 reveal">
+        <span class="section-label">Extras</span>
+        <h2 class="section-title">Add-On Services</h2>
+        <div class="section-divider centered"></div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="flex items-center justify-between p-5 bg-cream rounded-2xl reveal delay-100">
+          <div class="flex items-center gap-3">
+            <span class="text-2xl">🚗</span>
+            <div>
+              <div class="font-semibold text-sm">Collection & Drop Off</div>
+              <div class="text-xs text-gray-400">Up to 5 miles from our location</div>
+            </div>
+          </div>
+          <div class="font-playfair font-bold text-sage-dark">£3</div>
+        </div>
+        <div class="flex items-center justify-between p-5 bg-cream rounded-2xl reveal delay-200">
+          <div class="flex items-center gap-3">
+            <span class="text-2xl">🛁</span>
+            <div>
+              <div class="font-semibold text-sm">Post-Walk Wash</div>
+              <div class="text-xs text-gray-400">Full rinse down after muddy walks</div>
+            </div>
+          </div>
+          <div class="font-playfair font-bold text-sage-dark">£5</div>
+        </div>
+        <div class="flex items-center justify-between p-5 bg-cream rounded-2xl reveal delay-300">
+          <div class="flex items-center gap-3">
+            <span class="text-2xl">💊</span>
+            <div>
+              <div class="font-semibold text-sm">Medication Administration</div>
+              <div class="text-xs text-gray-400">Per session during boarding stays</div>
+            </div>
+          </div>
+          <div class="font-playfair font-bold text-sage-dark">Free</div>
+        </div>
+        <div class="flex items-center justify-between p-5 bg-cream rounded-2xl reveal delay-400">
+          <div class="flex items-center gap-3">
+            <span class="text-2xl">🐶</span>
+            <div>
+              <div class="font-semibold text-sm">Second Dog</div>
+              <div class="text-xs text-gray-400">From the same household</div>
+            </div>
+          </div>
+          <div class="font-playfair font-bold text-sage-dark">-20%</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NOTE ===== -->
+  <section class="py-12 px-6 bg-sage-pale">
+    <div class="max-w-3xl mx-auto text-center reveal">
+      <p class="text-sage-dark text-sm leading-relaxed">
+        <strong>🐾 Please note:</strong> All prices listed are a guide. A personalised quote will be provided following your free meet & greet. Prices may vary depending on your dog's size, specific needs, and the distance from our location. Bank holiday surcharges may apply for boarding stays.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="py-16 px-6" style="background:linear-gradient(135deg,#5c8060,#7A9E7E)">
+    <div class="max-w-2xl mx-auto text-center reveal">
+      <div class="text-4xl mb-4">💰</div>
+      <h2 class="font-playfair text-3xl font-bold text-white mb-4">Ready to Get Started?</h2>
+      <p class="text-white/80 mb-7">Contact us for a personalised quote and to book your free meet & greet.</p>
+      <a href="contact.html" class="bg-white text-sage-dark font-semibold px-8 py-3 rounded-full hover:bg-cream transition-all hover:shadow-lg inline-block">Get a Quote 🐾</a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="bg-[#2D2D2D] text-white py-14 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-4 gap-10 mb-10">
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-playfair font-bold text-xl">Wagging</span>
+            <span class="font-dancing text-xl text-pink">Mama</span>
+          </div>
+          <p class="text-white/60 text-sm leading-relaxed mb-5 max-w-xs">Professional dog walking & home boarding, delivered with love.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4 text-sm tracking-wider uppercase text-white/80">Services</h4>
+          <ul class="space-y-2">
+            <li><a href="dog-walking.html"  class="footer-link">Dog Walking</a></li>
+            <li><a href="dog-boarding.html" class="footer-link">Dog Boarding</a></li>
+            <li><a href="prices.html"       class="footer-link">Prices</a></li>
+            <li><a href="gallery.html"      class="footer-link">Gallery</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4 text-sm tracking-wider uppercase text-white/80">Contact</h4>
+          <ul class="space-y-2">
+            <li class="text-white/60 text-sm">📞 07XXX XXXXXX</li>
+            <li class="text-white/60 text-sm">📧 hello@waggingmama.co.uk</li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-white/10 pt-6 text-center">
+        <p class="text-white/40 text-xs">© 2025 Wagging Mama. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Gallery – See all the happy dogs in Wagging Mama's care, enjoying walks, boarding, and adventures." />
+  <title>Gallery | Wagging Mama</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            sage:  { DEFAULT:'#7A9E7E', dark:'#5c8060', light:'#A8C5AB', pale:'#E8F0E9' },
+            pink:  { DEFAULT:'#E8889A', dark:'#c96a7d', light:'#F2AABA', pale:'#FDEEF1' },
+            cream: { DEFAULT:'#FAF7F4', dark:'#F0EBE5' },
+          },
+          fontFamily: {
+            playfair: ['"Playfair Display"','serif'],
+            dancing:  ['"Dancing Script"','cursive'],
+            inter:    ['Inter','sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .masonry { columns: 1; gap: 1.25rem; }
+    @media(min-width:640px)  { .masonry { columns: 2; } }
+    @media(min-width:1024px) { .masonry { columns: 3; } }
+    .masonry-item { break-inside: avoid; margin-bottom: 1.25rem; }
+  </style>
+</head>
+<body class="bg-cream">
+
+  <!-- ===== NAVBAR ===== -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-cream/90 backdrop-blur-sm py-3 px-6">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="img/logo.png" alt="Wagging Mama" class="h-14 w-auto" onerror="this.style.display='none'"/>
+        <div class="leading-tight">
+          <span class="font-playfair font-bold text-xl text-[#2D2D2D]">Wagging</span>
+          <span class="font-dancing text-xl text-pink ml-1">Mama</span>
+        </div>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html"       class="nav-link">Home</a>
+        <a href="about.html"       class="nav-link">About</a>
+        <a href="dog-walking.html" class="nav-link">Dog Walking</a>
+        <a href="dog-boarding.html"class="nav-link">Dog Boarding</a>
+        <a href="gallery.html"     class="nav-link active">Gallery</a>
+        <a href="prices.html"      class="nav-link">Prices</a>
+        <a href="contact.html"     class="btn-primary text-sm">Contact Us</a>
+      </div>
+      <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg" aria-label="Toggle menu">
+        <svg id="menu-icon"  class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="md:hidden bg-white/95 backdrop-blur rounded-2xl mt-2 mx-2 shadow-lg">
+      <div class="flex flex-col p-4 gap-1">
+        <a href="index.html"       class="nav-link py-3 px-4 rounded-xl hover:bg-cream block">Home</a>
+        <a href="about.html"       class="nav-link py-3 px-4 rounded-xl hover:bg-cream block">About Us</a>
+        <a href="dog-walking.html" class="nav-link py-3 px-4 rounded-xl hover:bg-cream block">Dog Walking</a>
+        <a href="dog-boarding.html"class="nav-link py-3 px-4 rounded-xl hover:bg-cream block">Dog Boarding</a>
+        <a href="gallery.html"     class="nav-link py-3 px-4 rounded-xl hover:bg-cream block">Gallery</a>
+        <a href="prices.html"      class="nav-link py-3 px-4 rounded-xl hover:bg-cream block">Prices</a>
+        <a href="contact.html"     class="btn-primary mt-2 justify-center">Contact Us</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== PAGE HEADER ===== -->
+  <div class="pt-28 pb-12 px-6 text-center" style="background:linear-gradient(160deg,#FDEEF1 0%,#FAF7F4 60%,#E8F0E9 100%)">
+    <div class="max-w-2xl mx-auto">
+      <span class="section-label">Happy Days</span>
+      <h1 class="section-title">Our Gallery</h1>
+      <div class="section-divider centered"></div>
+      <p class="text-gray-500 leading-relaxed">A peek into the adventures, cuddles, and tail wags that happen every single day at Wagging Mama.</p>
+    </div>
+  </div>
+
+  <!-- ===== FILTER TABS ===== -->
+  <div class="sticky top-[76px] z-30 bg-cream/95 backdrop-blur border-b border-gray-100 py-3 px-6">
+    <div class="max-w-6xl mx-auto flex gap-2 overflow-x-auto pb-1">
+      <button id="filter-all"      class="filter-btn active-filter px-5 py-2 rounded-full text-sm font-semibold transition-all whitespace-nowrap bg-sage text-white" data-filter="all">All Photos 🐾</button>
+      <button id="filter-walking"  class="filter-btn px-5 py-2 rounded-full text-sm font-semibold transition-all whitespace-nowrap bg-white text-gray-600 hover:bg-sage-pale" data-filter="walking">Dog Walking 🦮</button>
+      <button id="filter-boarding" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold transition-all whitespace-nowrap bg-white text-gray-600 hover:bg-pink-pale" data-filter="boarding">Dog Boarding 🏡</button>
+      <button id="filter-play"     class="filter-btn px-5 py-2 rounded-full text-sm font-semibold transition-all whitespace-nowrap bg-white text-gray-600 hover:bg-sage-pale" data-filter="play">Playtime 🎾</button>
+    </div>
+  </div>
+
+  <!-- ===== GALLERY GRID ===== -->
+  <section class="py-16 px-6 bg-cream">
+    <div class="max-w-6xl mx-auto masonry" id="gallery-grid">
+
+      <!-- Walking images -->
+      <div class="masonry-item gallery-item reveal" data-category="walking" data-src="img/hero-walking.png" data-alt="Happy dog on a walk">
+        <img src="img/hero-walking.png" alt="Happy dog on a walk" class="w-full rounded-2xl"/>
+        <div class="gallery-overlay rounded-2xl">
+          <span class="text-white font-semibold text-sm">🦮 Daily Walk Adventures</span>
+        </div>
+      </div>
+
+      <div class="masonry-item gallery-item reveal delay-100" data-category="play" data-src="img/gallery1.png" data-alt="Dogs playing in garden">
+        <img src="img/gallery1.png" alt="Dogs playing in garden" class="w-full rounded-2xl"/>
+        <div class="gallery-overlay rounded-2xl">
+          <span class="text-white font-semibold text-sm">🎾 Garden Playtime</span>
+        </div>
+      </div>
+
+      <div class="masonry-item gallery-item reveal delay-200" data-category="boarding" data-src="img/boarding-cozy.png" data-alt="Cozy dog boarding">
+        <img src="img/boarding-cozy.png" alt="Cozy dog boarding" class="w-full rounded-2xl"/>
+        <div class="gallery-overlay rounded-2xl">
+          <span class="text-white font-semibold text-sm">🏡 Cosy Boarding Stays</span>
+        </div>
+      </div>
+
+      <div class="masonry-item gallery-item reveal delay-100" data-category="play" data-src="img/gallery2.png" data-alt="Spaniel portrait in garden">
+        <img src="img/gallery2.png" alt="Spaniel portrait in garden" class="w-full rounded-2xl"/>
+        <div class="gallery-overlay rounded-2xl">
+          <span class="text-white font-semibold text-sm">🌸 Garden Portraits</span>
+        </div>
+      </div>
+
+      <div class="masonry-item gallery-item reveal delay-200" data-category="walking" data-src="img/about-owner.png" data-alt="Owner with dog in garden">
+        <img src="img/about-owner.png" alt="Owner with dog in garden" class="w-full rounded-2xl"/>
+        <div class="gallery-overlay rounded-2xl">
+          <span class="text-white font-semibold text-sm">❤️ Full of Love</span>
+        </div>
+      </div>
+
+      <div class="masonry-item gallery-item reveal delay-300" data-category="boarding" data-src="img/boarding-cozy.png" data-alt="Dog resting at home">
+        <img src="img/boarding-cozy.png" alt="Dog resting at home" class="w-full rounded-2xl" style="filter:hue-rotate(10deg) saturate(0.95)"/>
+        <div class="gallery-overlay rounded-2xl">
+          <span class="text-white font-semibold text-sm">😴 Afternoon Naps</span>
+        </div>
+      </div>
+
+      <div class="masonry-item gallery-item reveal delay-100" data-category="walking" data-src="img/hero-walking.png" data-alt="Dog walking in the park">
+        <img src="img/hero-walking.png" alt="Dog walking in the park" class="w-full rounded-2xl" style="filter:saturate(1.1) brightness(1.05)"/>
+        <div class="gallery-overlay rounded-2xl">
+          <span class="text-white font-semibold text-sm">🌿 Park Explorations</span>
+        </div>
+      </div>
+
+      <div class="masonry-item gallery-item reveal delay-200" data-category="play" data-src="img/gallery1.png" data-alt="Dogs having fun together">
+        <img src="img/gallery1.png" alt="Dogs having fun together" class="w-full rounded-2xl" style="filter:brightness(1.05) contrast(1.05)"/>
+        <div class="gallery-overlay rounded-2xl">
+          <span class="text-white font-semibold text-sm">🐕 Best of Friends</span>
+        </div>
+      </div>
+
+      <div class="masonry-item gallery-item reveal delay-300" data-category="play" data-src="img/gallery2.png" data-alt="Dog in flower garden">
+        <img src="img/gallery2.png" alt="Dog in flower garden" class="w-full rounded-2xl" style="filter:saturate(1.15)"/>
+        <div class="gallery-overlay rounded-2xl">
+          <span class="text-white font-semibold text-sm">🌺 Flower Garden Fun</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Empty state (hidden by default) -->
+    <div id="gallery-empty" class="hidden text-center py-16 text-gray-400">
+      <div class="text-5xl mb-4">🐾</div>
+      <p class="text-lg font-medium">No photos in this category yet.<br/>Check back soon!</p>
+    </div>
+  </section>
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div id="lightbox" class="fixed inset-0 z-[100] bg-black/85 backdrop-blur-sm hidden flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-label="Image lightbox">
+    <button id="lightbox-close" class="absolute top-4 right-4 w-12 h-12 bg-white/20 hover:bg-white/40 rounded-full flex items-center justify-center text-white text-2xl transition-colors" aria-label="Close lightbox">✕</button>
+    <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[85vh] rounded-2xl shadow-2xl object-contain"/>
+  </div>
+
+  <!-- ===== INSTAGRAM CTA ===== -->
+  <section class="py-16 px-6 bg-white">
+    <div class="max-w-2xl mx-auto text-center reveal">
+      <div class="text-4xl mb-4">📸</div>
+      <h2 class="font-playfair text-3xl font-bold mb-4">Follow Our Adventures</h2>
+      <p class="text-gray-500 mb-7">See daily updates from our walks and stays on Instagram. Your dog could be featured next!</p>
+      <a href="#" class="btn-primary">
+        <span>ig</span> Follow on Instagram
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="py-14 px-6" style="background:linear-gradient(135deg,#5c8060,#E8889A)">
+    <div class="max-w-2xl mx-auto text-center reveal">
+      <h2 class="font-playfair text-3xl font-bold text-white mb-4">Want Your Dog to Be Our Next Star? 🌟</h2>
+      <p class="text-white/80 mb-7">Book a walk or boarding stay and your pup will be featured in our gallery!</p>
+      <a href="contact.html" class="bg-white text-sage-dark font-semibold px-8 py-3 rounded-full hover:bg-cream transition-all hover:shadow-lg inline-block">Book Now 🐾</a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="bg-[#2D2D2D] text-white py-14 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-4 gap-10 mb-10">
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="font-playfair font-bold text-xl">Wagging</span>
+            <span class="font-dancing text-xl text-pink">Mama</span>
+          </div>
+          <p class="text-white/60 text-sm leading-relaxed mb-5 max-w-xs">Professional dog walking & home boarding, delivered with love.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4 text-sm tracking-wider uppercase text-white/80">Services</h4>
+          <ul class="space-y-2">
+            <li><a href="dog-walking.html"  class="footer-link">Dog Walking</a></li>
+            <li><a href="dog-boarding.html" class="footer-link">Dog Boarding</a></li>
+            <li><a href="prices.html"       class="footer-link">Prices</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4 text-sm tracking-wider uppercase text-white/80">Contact</h4>
+          <ul class="space-y-2">
+            <li class="text-white/60 text-sm">📞 07XXX XXXXXX</li>
+            <li class="text-white/60 text-sm">📧 hello@waggingmama.co.uk</li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-white/10 pt-6 text-center">
+        <p class="text-white/40 text-xs">© 2025 Wagging Mama. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Gallery filter logic
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('#gallery-grid .masonry-item');
+    const emptyMsg = document.getElementById('gallery-empty');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.dataset.filter;
+
+        // Update button styles
+        filterBtns.forEach(b => {
+          b.classList.remove('bg-sage','bg-pink','text-white');
+          b.classList.add('bg-white','text-gray-600');
+        });
+        btn.classList.remove('bg-white','text-gray-600');
+        btn.classList.add(filter === 'boarding' ? 'bg-pink' : 'bg-sage', 'text-white');
+
+        // Filter items
+        let visible = 0;
+        galleryItems.forEach(item => {
+          const cat = item.querySelector('.gallery-item')?.dataset.category || item.dataset?.category;
+          const galleryEl = item.querySelector('.gallery-item');
+          if (!galleryEl) return;
+          const match = filter === 'all' || galleryEl.dataset.category === filter;
+          item.style.display = match ? '' : 'none';
+          if (match) visible++;
+        });
+
+        emptyMsg.classList.toggle('hidden', visible > 0);
+      });
+    });
+  </script>
+</body>
+</html>
