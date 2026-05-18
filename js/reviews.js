@@ -100,7 +100,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (targetCard) {
           const containerRect = sliderContainer.getBoundingClientRect();
           const targetRect = targetCard.getBoundingClientRect();
-          sliderContainer.scrollBy({ left: targetRect.left - containerRect.left - (window.innerWidth >= 768 ? 40 : 16), behavior: 'smooth' });
+          // Subtract 16 to account for the px-4 container padding on all screen sizes
+          sliderContainer.scrollBy({ left: targetRect.left - containerRect.left - 16, behavior: 'smooth' });
         }
       });
       sliderDotsContainer.appendChild(dot);
