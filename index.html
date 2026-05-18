@@ -223,16 +223,22 @@
         <h2 class="section-title">What Our Clients Say</h2>
         <div class="section-divider centered"></div>
       </div>
-      
+
       <!-- Slider Container -->
       <div class="relative w-full reveal delay-100">
         <!-- Buttons -->
-        <button id="slider-prev" class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -ml-2 md:-ml-6 w-10 h-10 md:w-12 md:h-12 bg-white border border-gray-100 rounded-full shadow-lg items-center justify-center text-gray-800 z-10 hover:bg-sage hover:text-white transition-colors focus:outline-none" aria-label="Previous Review"><i class="fas fa-chevron-left text-sm md:text-base"></i></button>
-        
-        <button id="slider-next" class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 -mr-2 md:-mr-6 w-10 h-10 md:w-12 md:h-12 bg-white border border-gray-100 rounded-full shadow-lg items-center justify-center text-gray-800 z-10 hover:bg-sage hover:text-white transition-colors focus:outline-none" aria-label="Next Review"><i class="fas fa-chevron-right text-sm md:text-base"></i></button>
+        <button id="slider-prev"
+          class="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -ml-2 md:-ml-6 w-10 h-10 md:w-12 md:h-12 bg-white border border-gray-100 rounded-full shadow-lg items-center justify-center text-gray-800 z-10 hover:bg-sage hover:text-white transition-colors focus:outline-none"
+          aria-label="Previous Review"><i class="fas fa-chevron-left text-sm md:text-base"></i></button>
+
+        <button id="slider-next"
+          class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 -mr-2 md:-mr-6 w-10 h-10 md:w-12 md:h-12 bg-white border border-gray-100 rounded-full shadow-lg items-center justify-center text-gray-800 z-10 hover:bg-sage hover:text-white transition-colors focus:outline-none"
+          aria-label="Next Review"><i class="fas fa-chevron-right text-sm md:text-base"></i></button>
 
         <!-- Track -->
-        <div id="reviews-slider" class="flex gap-4 md:gap-6 overflow-x-auto snap-x snap-mandatory pb-4 pt-4 px-4 md:px-4 scroll-smooth items-stretch" style="scrollbar-width: none; -ms-overflow-style: none;">
+        <div id="reviews-slider"
+          class="flex gap-4 md:gap-6 overflow-x-auto snap-x snap-mandatory pb-4 pt-4 px-4 md:px-4 scroll-smooth items-stretch"
+          style="scrollbar-width: none; -ms-overflow-style: none;">
           <!-- Items will be injected by js/reviews.js -->
         </div>
 
@@ -246,9 +252,20 @@
       </div>
     </div>
     <style>
-      #reviews-slider::-webkit-scrollbar { display: none; }
-      .review-card { width: 100%; flex-shrink: 0; }
-      @media(min-width: 768px) { .review-card { width: 350px; } }
+      #reviews-slider::-webkit-scrollbar {
+        display: none;
+      }
+
+      .review-card {
+        width: 100%;
+        flex-shrink: 0;
+      }
+
+      @media(min-width: 768px) {
+        .review-card {
+          width: 350px;
+        }
+      }
     </style>
   </section>
 
