@@ -11,29 +11,11 @@
   <script src="js/tailwind-config.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <link rel="stylesheet" href="css/style.css" />
-  <style>
-    .masonry {
-      columns: 1;
-      gap: 1.25rem;
-    }
-
-    @media(min-width:640px) {
-      .masonry {
-        columns: 2;
+    <style>
+      .masonry-item {
+        break-inside: avoid;
       }
-    }
-
-    @media(min-width:1024px) {
-      .masonry {
-        columns: 3;
-      }
-    }
-
-    .masonry-item {
-      break-inside: avoid;
-      margin-bottom: 1.25rem;
-    }
-  </style>
+    </style>
 </head>
 
 <body class="bg-cream">
@@ -92,7 +74,7 @@
   </div>
 
   <!-- ===== FILTER TABS ===== -->
-  <div class="sticky top-[76px] z-30 bg-cream/95 backdrop-blur border-b border-gray-100 py-3 px-6">
+  <div class="sticky top-[68px] z-30 bg-cream/95 backdrop-blur border-b border-gray-100 py-4 px-6">
     <div class="max-w-6xl mx-auto flex gap-2 overflow-x-auto pb-1">
       <button id="filter-all"
         class="filter-btn active-filter px-5 py-2 rounded-full text-sm font-semibold transition-all whitespace-nowrap bg-sage text-white"
@@ -111,7 +93,7 @@
 
   <!-- ===== GALLERY GRID ===== -->
   <section class="py-16 px-6 bg-cream">
-    <div class="max-w-6xl mx-auto masonry" id="gallery-grid">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 items-start" id="gallery-grid">
 
       <!-- Walking images -->
       <div class="masonry-item gallery-item reveal" data-category="walking" data-src="img/hero-walking.png"
@@ -302,15 +284,15 @@
         // Filter items
         let visible = 0;
         galleryItems.forEach(item => {
-          const cat = item.querySelector('.gallery-item')?.dataset.category || item.dataset?.category;
-          const galleryEl = item.querySelector('.gallery-item');
-          if (!galleryEl) return;
-          const match = filter === 'all' || galleryEl.dataset.category === filter;
+          const cat = item.dataset.category;
+          const match = filter === 'all' || cat === filter;
           item.style.display = match ? '' : 'none';
           if (match) visible++;
         });
 
-        emptyMsg.classList.toggle('hidden', visible > 0);
+        if (emptyMsg) {
+          emptyMsg.classList.toggle('hidden', visible > 0);
+        }
       });
     });
   </script>
