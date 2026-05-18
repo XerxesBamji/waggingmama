@@ -227,20 +227,28 @@
       <!-- Slider Container -->
       <div class="relative w-full reveal delay-100">
         <!-- Buttons -->
-        <button id="slider-prev" class="absolute left-0 top-1/2 -translate-y-1/2 -ml-2 md:-ml-6 w-12 h-12 bg-white border border-gray-100 rounded-full shadow-lg flex items-center justify-center text-gray-800 z-10 hover:bg-sage hover:text-white transition-colors focus:outline-none" aria-label="Previous Review"><i class="fas fa-chevron-left"></i></button>
+        <button id="slider-prev" class="absolute left-0 top-1/2 -translate-y-1/2 -ml-2 md:-ml-6 w-10 h-10 md:w-12 md:h-12 bg-white border border-gray-100 rounded-full shadow-lg flex items-center justify-center text-gray-800 z-10 hover:bg-sage hover:text-white transition-colors focus:outline-none" aria-label="Previous Review"><i class="fas fa-chevron-left text-sm md:text-base"></i></button>
         
-        <button id="slider-next" class="absolute right-0 top-1/2 -translate-y-1/2 -mr-2 md:-mr-6 w-12 h-12 bg-white border border-gray-100 rounded-full shadow-lg flex items-center justify-center text-gray-800 z-10 hover:bg-sage hover:text-white transition-colors focus:outline-none" aria-label="Next Review"><i class="fas fa-chevron-right"></i></button>
-        
+        <button id="slider-next" class="absolute right-0 top-1/2 -translate-y-1/2 -mr-2 md:-mr-6 w-10 h-10 md:w-12 md:h-12 bg-white border border-gray-100 rounded-full shadow-lg flex items-center justify-center text-gray-800 z-10 hover:bg-sage hover:text-white transition-colors focus:outline-none" aria-label="Next Review"><i class="fas fa-chevron-right text-sm md:text-base"></i></button>
+
         <!-- Track -->
-        <div id="reviews-slider" class="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-8 pt-4 px-4 scroll-smooth items-stretch" style="scrollbar-width: none; -ms-overflow-style: none;">
+        <div id="reviews-slider" class="flex gap-4 md:gap-6 overflow-x-auto snap-x snap-mandatory pb-4 pt-4 px-10 md:px-4 scroll-smooth items-stretch" style="scrollbar-width: none; -ms-overflow-style: none;">
           <!-- Items will be injected by js/reviews.js -->
+        </div>
+
+        <!-- Slider Pagination & Counter -->
+        <div class="flex flex-col items-center justify-center gap-3 mt-4">
+          <!-- Dots Container -->
+          <div id="slider-dots" class="flex flex-wrap justify-center gap-1.5 md:gap-2 px-4 max-w-full"></div>
+          <!-- Counter -->
+          <div id="slider-counter" class="text-sm text-gray-400 font-medium tracking-wide"></div>
         </div>
       </div>
     </div>
     <style>
       #reviews-slider::-webkit-scrollbar { display: none; }
-      .review-card { min-width: 300px; max-width: 350px; }
-      @media(min-width: 768px) { .review-card { min-width: 350px; } }
+      .review-card { width: 260px; flex-shrink: 0; }
+      @media(min-width: 768px) { .review-card { width: 350px; } }
     </style>
   </section>
 

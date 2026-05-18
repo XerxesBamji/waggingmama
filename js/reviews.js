@@ -26,7 +26,6 @@ function timeAgo(dateString) {
   const now = new Date();
   
   let monthsDiff = (now.getFullYear() - date.getFullYear()) * 12 + (now.getMonth() - date.getMonth());
-  // Adjust for day of the month if it hasn't reached the exact day yet
   if (now.getDate() < date.getDate()) {
     monthsDiff--;
   }
@@ -41,19 +40,33 @@ function timeAgo(dateString) {
 
 document.addEventListener('DOMContentLoaded', () => {
   const sliderContainer = document.getElementById('reviews-slider');
+  const sliderDotsContainer = document.getElementById('slider-dots');
+  const sliderCounter = document.getElementById('slider-counter');
+  let dots = [];
+
   if (!sliderContainer) return;
+
+  // Disable scroll anchoring to prevent jumping bugs
+  sliderContainer.style.overflowAnchor = 'none';
 
   // Sort reviews by date descending (newest first)
   const sortedReviews = [...reviewsData].sort((a, b) => new Date(b.date) - new Date(a.date));
+  
+  // Clone the array to create 3 sets for infinite scrolling
+  const infiniteReviews = [...sortedReviews, ...sortedReviews, ...sortedReviews];
+  const setSize = sortedReviews.length;
 
   // Generate HTML for each review
-  sortedReviews.forEach((review, index) => {
-    const bgClass = index % 2 === 0 ? 'bg-sage-pale' : 'bg-pink-pale';
-    const textClass = index % 2 === 0 ? 'text-sage-dark' : 'text-pink-dark';
+  infiniteReviews.forEach((review, index) => {
+    // The actual visual index maps to 0-19
+    const actualIndex = index % setSize;
+    const bgClass = actualIndex % 2 === 0 ? 'bg-sage-pale' : 'bg-pink-pale';
+    const textClass = actualIndex % 2 === 0 ? 'text-sage-dark' : 'text-pink-dark';
 
     const card = document.createElement('div');
     card.className = 'review-card snap-center shrink-0 testimonial-card flex flex-col justify-between';
     card.style.scrollSnapAlign = 'center';
+    card.dataset.index = actualIndex;
 
     card.innerHTML = `
       <div>
@@ -74,6 +87,88 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
 
     sliderContainer.appendChild(card);
+
+    // Only add dots for the first set (we just map them logically to actualIndex)
+    if (index < setSize && sliderDotsContainer) {
+      const dot = document.createElement('button');
+      dot.className = `w-2 h-2 rounded-full transition-all ${actualIndex === 0 ? 'bg-sage scale-125' : 'bg-gray-300 hover:bg-sage-light'}`;
+      dot.setAttribute('aria-label', `Go to review ${actualIndex + 1}`);
+      dot.addEventListener('click', () => {
+        // Jump to the corresponding card in the middle set (set 1)
+        const targetIndex = setSize + actualIndex;
+        const targetCard = sliderContainer.children[targetIndex];
+        if (targetCard) {
+          const containerRect = sliderContainer.getBoundingClientRect();
+          const targetRect = targetCard.getBoundingClientRect();
+          sliderContainer.scrollBy({ left: targetRect.left - containerRect.left - (window.innerWidth >= 768 ? 40 : 16), behavior: 'smooth' });
+        }
+      });
+      sliderDotsContainer.appendChild(dot);
+      dots.push(dot);
+    }
+  });
+
+  const getCardWidthAndGap = () => {
+    const cardWidth = sliderContainer.querySelector('.review-card').offsetWidth;
+    const gap = window.innerWidth >= 768 ? 24 : 16;
+    return cardWidth + gap;
+  };
+
+  // Center the slider on the middle set initially
+  setTimeout(() => {
+    sliderContainer.classList.remove('scroll-smooth');
+    const offset = getCardWidthAndGap();
+    sliderContainer.scrollLeft = setSize * offset;
+    void sliderContainer.offsetWidth; // Force reflow
+    sliderContainer.classList.add('scroll-smooth');
+  }, 100);
+
+  // Update counter and dots on scroll
+  const updatePagination = () => {
+    const offset = getCardWidthAndGap();
+    const scrollPosition = sliderContainer.scrollLeft;
+    
+    let visualIndex = Math.round(scrollPosition / offset);
+    visualIndex = Math.max(0, Math.min(visualIndex, infiniteReviews.length - 1));
+    
+    // Infinite loop jump check
+    // If we scroll into the first set (index < 5), jump forward by setSize
+    if (visualIndex < 5) {
+      sliderContainer.classList.remove('scroll-smooth', 'snap-x', 'snap-mandatory');
+      sliderContainer.scrollLeft += setSize * offset;
+      visualIndex += setSize;
+      void sliderContainer.offsetWidth;
+      sliderContainer.classList.add('scroll-smooth', 'snap-x', 'snap-mandatory');
+    }
+    // If we scroll into the third set (index > 55), jump backward by setSize
+    else if (visualIndex >= setSize * 2 + 15) {
+      sliderContainer.classList.remove('scroll-smooth', 'snap-x', 'snap-mandatory');
+      sliderContainer.scrollLeft -= setSize * offset;
+      visualIndex -= setSize;
+      void sliderContainer.offsetWidth;
+      sliderContainer.classList.add('scroll-smooth', 'snap-x', 'snap-mandatory');
+    }
+    
+    const activeCard = sliderContainer.children[visualIndex];
+    if (!activeCard) return;
+    
+    const actualIndex = parseInt(activeCard.dataset.index);
+    
+    if (sliderCounter) {
+      sliderCounter.textContent = `${actualIndex + 1} / ${setSize}`;
+    }
+    
+    dots.forEach((dot, idx) => {
+      if (idx === actualIndex) {
+        dot.className = 'w-2 h-2 rounded-full transition-all bg-sage scale-125';
+      } else {
+        dot.className = 'w-2 h-2 rounded-full transition-all bg-gray-300 hover:bg-sage-light';
+      }
+    });
+  };
+
+  sliderContainer.addEventListener('scroll', () => {
+    requestAnimationFrame(updatePagination);
   });
 
   const prevBtn = document.getElementById('slider-prev');
@@ -81,13 +176,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (prevBtn && nextBtn) {
     prevBtn.addEventListener('click', () => {
-      const cardWidth = sliderContainer.querySelector('.review-card').offsetWidth;
-      sliderContainer.scrollBy({ left: -cardWidth - 24, behavior: 'smooth' }); // 24px is the gap
+      const offset = getCardWidthAndGap();
+      sliderContainer.scrollBy({ left: -offset, behavior: 'smooth' });
     });
 
     nextBtn.addEventListener('click', () => {
-      const cardWidth = sliderContainer.querySelector('.review-card').offsetWidth;
-      sliderContainer.scrollBy({ left: cardWidth + 24, behavior: 'smooth' });
+      const offset = getCardWidthAndGap();
+      sliderContainer.scrollBy({ left: offset, behavior: 'smooth' });
     });
   }
 });
