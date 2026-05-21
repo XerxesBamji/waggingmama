@@ -455,6 +455,20 @@ body {
   inset: 0;
   border-radius: 30px;
   box-shadow: inset 0 0 0 3px rgba(232,136,154,0.3);
+  pointer-events: none;
+}
+
+.pink-border-frame {
+  position: relative;
+  overflow: hidden;
+}
+.pink-border-frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 3px rgba(232,136,154,0.3);
+  pointer-events: none;
 }
 
 /* ---------- Stat boxes ---------- */
