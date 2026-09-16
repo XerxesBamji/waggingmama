@@ -236,11 +236,9 @@
               <label for="service" class="form-label">Interested In <span class="text-pink">*</span></label>
               <select id="service" name="service" class="form-select" required>
                 <option value="" disabled selected>Please select a service...</option>
-                <option value="dog-walking-solo">Dog Walking – Solo Walk</option>
-                <option value="dog-walking-group">Dog Walking – Group Walk</option>
-                <option value="dog-walking-extended">Dog Walking – Extended Walk</option>
-                <option value="dog-boarding-overnight">Dog Boarding – Overnight Stay</option>
-                <option value="dog-boarding-weekly">Dog Boarding – Weekly Stay</option>
+                <option value="dog-walking-group">Dog Walking - Group Walk</option>
+                <option value="dog-boarding-overnight">Dog Boarding - Overnight Stay</option>
+                <option value="dog-boarding-weekly">Dog Boarding - Weekly Stay</option>
                 <option value="meet-greet">Free Meet & Greet</option>
                 <option value="general">General Enquiry</option>
               </select>
@@ -257,6 +255,17 @@
                 <input type="text" id="dog-breed" name="dog-breed" class="form-input"
                   placeholder="e.g. Cocker Spaniel, 3yrs" />
               </div>
+            </div>
+
+            <!-- Row 4b: Spayed/Neutered -->
+            <div class="mb-5">
+              <label for="neutered" class="form-label">Is Your Dog Spayed / Neutered?</label>
+              <select id="neutered" name="neutered" class="form-select">
+                <option value="" disabled selected>Please select...</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+                <option value="unsure">Not sure</option>
+              </select>
             </div>
 
             <!-- Row 5: Dates -->
@@ -282,7 +291,7 @@
             <div class="mb-6">
               <label for="message" class="form-label">Anything Else We Should Know?</label>
               <textarea id="message" name="message" class="form-textarea"
-                placeholder="Tell us about your dog – their personality, any special requirements, medical needs, or questions you have..."></textarea>
+                placeholder="Tell us about your dog – their personality, any special requirements, medical needs, or questions you have. If enquiring about dog boarding, please list your required dates so we can check availability."></textarea>
             </div>
 
             <!-- How did you hear -->
